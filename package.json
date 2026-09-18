@@ -1,0 +1,32 @@
+{
+  "name": "syndicate-protocol",
+  "version": "0.1.0",
+  "description": "A Portable Single Source of Truth (SSOT) Methodology & Operating System for Multi-Agent and Multi-Contributor Development",
+  "type": "module",
+  "scripts": {
+    "verify:ssot": "node scripts/verify-ssot.mjs",
+    "verify": "node scripts/verify-ssot.mjs",
+    "build:cli": "go build -o bin/syn.exe ./cmd/syn",
+    "build:bin": "go build -o bin/syn.exe ./cmd/syn && ./bin/syn.exe update",
+    "ci:check": "syn verify --deep && syn harden && syn scan --fail-on HIGH",
+    "cli": "go run ./cmd/syn",
+    "adapt": "go run ./cmd/syn adapt",
+    "harden": "go run ./cmd/syn harden"
+  },
+  "keywords": [
+    "multi-agent",
+    "ai-agents",
+    "ssot",
+    "governance",
+    "spec-driven-development",
+    "anti-drift"
+  ],
+  "author": "Syntax Syndicate",
+  "license": "SEE LICENSE IN LICENSE",
+  "knip": {
+    "ignoreBinaries": [
+      "go",
+      "syn"
+    ]
+  }
+}

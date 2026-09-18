@@ -1,0 +1,73 @@
+SYNDICATE COMMUNITY SOURCE LICENSE (ANTI-SAAS & ANTI-COMMERCIALIZATION)
+Version 1.0 — September 2026
+
+Copyright (c) 2026 Syntax Syndicate (<https://github.com/syntax-syndicate>)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software for non-commercial and internal engineering purposes,
+subject to the following mandatory conditions:
+
+1. DEFINITIONS
+   (a) "Commercial Use" means any activity conducted with the intent to generate
+       revenue, obtain commercial advantage, charge subscription or access fees,
+       or provide paid services to third parties.
+   (b) "Software-as-a-Service (SaaS)" means making the functionality of the
+       Software, in whole or in substantial part, available to any third party
+       over a computer network as a hosted, managed, cloud, multi-tenant, or
+       serverless service.
+   (c) "Internal Use" means the use, execution, and modification of the Software
+       strictly by an individual or within a single business entity solely for
+       developing, verifying, and governing that entity's own internal software
+       projects and repositories.
+
+2. PERMITTED USES
+   You may freely:
+   (a) Inspect, study, fork, and modify the source code of the Software.
+   (b) Run the Software locally on developer workstations or on private,
+       self-hosted continuous integration (CI) runners solely for Internal Use.
+   (c) Distribute unmodified copies of this Software free of charge for
+       educational, academic, research, or open-source community development,
+       provided this entire LICENSE file accompanies every copy.
+
+3. STRICT PROHIBITIONS & COMMERCIAL RESTRICTIONS
+   (a) Anti-SaaS Prohibition: You may NOT provide, host, manage, or operate the
+       Software, or any substantial portion of its functionality, as a SaaS,
+       cloud service, hosted web dashboard, hosted API, or managed service to
+       any third party, regardless of whether fees are designated as hosting,
+       compute, infrastructure, management, or software fees.
+   (b) Zero Direct or Indirect Fees: You may NOT charge any person or entity any
+       fee, direct or indirect, for access to, use of, or interaction with the
+       Software or its generated outputs.
+   (c) Anti-Bundling & Product Integration: The Software may NOT be embedded,
+       bundled, packaged, or offered as a feature, module, or add-on within any
+       commercial product, paid suite, or subscription-gated service, even if
+       the Software is advertised as "free", "optional", or "community edition".
+   (d) Attribution & Anti-White-Labeling: All copyright notices, the official
+       Syndicate Protocol ASCII banners, theme tokens, and brand attributions
+       must be preserved intact and visible in all distributions, CLI outputs,
+       web interfaces, and derivative works. White-labeling is strictly forbidden.
+
+4. TRADEMARK RESERVATION
+   This license does not grant any right or license to use the trademarks, trade
+   names, service marks, or logos of "Syndicate Protocol", "Syntax Syndicate",
+   or "syn CLI", except as required for reasonable and customary attribution.
+
+5. AUTOMATIC TERMINATION & REMEDIES
+   Any violation of the restrictions in Section 3 will automatically and
+   immediately terminate all rights and licenses granted under this agreement
+   without notice or opportunity to cure. Upon termination, any continued use,
+   hosting, copying, or distribution of the Software constitutes willful
+   copyright infringement under applicable domestic and international copyright
+   laws, subjecting the infringer to statutory damages, injunctive relief, and
+   attorney's fees.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

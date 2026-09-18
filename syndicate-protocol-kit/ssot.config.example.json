@@ -1,0 +1,39 @@
+{
+  "_comment": "Copy this file to <repo-root>/ssot.config.json and edit every field to match your actual project. Remove this _comment field once you've read it — it's documentation, not config.",
+
+  "projectName": "[PROJECT_NAME]",
+
+  "_rootDocs_comment": "The living root files that must always exist. Rename/remove entries if your project uses different filenames, but keep the five-document pattern (SSOT/README/TASK/HANDOFF/AGENTS) if you want to stay consistent with the Syndicate Protocol (docs/SYNDICATE_PROTOCOL.md).",
+  "rootDocs": [
+    ["SSOT.md", "Single Source of Truth Authority Document"],
+    ["README.md", "Repository Overview & Quickstart"],
+    ["TASK.md", "Living Task Progress Tracker"],
+    ["HANDOFF.md", "Living Hand-Off State"],
+    ["AGENTS.md", "Contributor & Agent Operating Guidelines"]
+  ],
+
+  "_docsHub_comment": "Reference documents that must exist under docs/. Add/remove rows to match your actual docs/ folder.",
+  "docsHub": [
+    ["docs/README.md", "Documentation Index & Navigation Map"]
+  ],
+
+  "_taskFile_comment": "The living task tracker to scan. The script parses every '- [x] ...' line for backtick-quoted file paths and confirms each one exists on disk — this is the automated check for Anti-Drift Rule 6 (no fake 'complete' status).",
+  "taskFile": "TASK.md",
+  "verifyTaskFileReferences": true,
+
+  "_test_comment": "Set testDir to null (and testFileSuffix/buildConfigFile to null) to skip the test-registration check entirely, e.g. for projects with a different test-discovery mechanism.",
+  "testDir": "test",
+  "testFileSuffix": ".test.ts",
+  "buildConfigFile": null,
+  "packageJsonTestScript": "test",
+
+  "_shadowTrackers_comment": "Filenames that are never allowed to exist anywhere tracked tasks might hide instead of TASK.md.",
+  "shadowTrackers": [
+    "TODO.md",
+    "NOTES.md",
+    "TASKS_NEW.md",
+    "STATUS.md",
+    "TODO.txt",
+    "SCRATCH.md"
+  ]
+}
