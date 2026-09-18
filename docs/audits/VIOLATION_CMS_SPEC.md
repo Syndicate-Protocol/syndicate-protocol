@@ -2,6 +2,9 @@
 
 > **Role & Purpose**: This document establishes the authoritative technical blueprint and data architecture for tracking, auditing, and investigating license integrity breaches and unauthorized commercial forks on the **Syntax Syndicate** infrastructure.
 
+> [!NOTE]
+> **Alpha Release Status**: Remote breach attestation and CMS telemetry (`protocol.syntaxsyndicate.com`) are **strictly disabled by default** in Alpha releases (`v0.2.0-alpha.*`) and during active development. All license integrity and anti-SaaS audits operate purely locally via in-binary SHA-256 validation. Remote dispatch will be enabled in later release tiers (RC/Stable) once the server-side CMS infrastructure is fully deployed on the company VPS.
+
 ---
 
 ## 1. System Architecture & Zero-Cost Data Flow

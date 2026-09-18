@@ -20,7 +20,7 @@
 
 Syndicate Protocol follows Semantic Versioning 2.0 (`vMAJOR.MINOR.PATCH[-PRERELEASE]`):
 
-```
+```text
                      ┌───────────┐
   Bleeding Edge ───► │   ALPHA   │  (v*.*.*-alpha.*) — Internal / Experimental
                      └─────┬─────┘
@@ -61,6 +61,7 @@ Syndicate Protocol utilizes a Single Source of Truth (SSOT) feature flag system 
 | Feature Key | Stage | Default | Description |
 |---|---|---|---|
 | `rule7-enforce` | **STABLE** | `ACTIVE` | Strict automated validation of Suggestions, Enhancements, Fixes, Next-Steps |
+| `remote-attestation` | **RC** | `OFF` | Remote breach attestation reporting to protocol.syntaxsyndicate.com CMS (disabled in Alpha) |
 | `telemetry-export` | **RC** | `OFF` | OpenTelemetry protocol gRPC/HTTP remote streaming for agent trace spans |
 | `lsp-server` | **BETA** | `OFF` | Native LSP server enabling live in-editor SSOT linting for VS Code & Cursor |
 | `wasm-engine` | **BETA** | `OFF` | Portable Wasm runtime for sandboxed polyglot AST code signature analysis |
