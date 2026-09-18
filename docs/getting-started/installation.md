@@ -4,9 +4,35 @@ Syndicate Protocol is distributed as a single, zero-dependency standalone binary
 
 ---
 
-## Automated Global Installation
+## Supported Operating Systems & Architectures
 
-The recommended method is using our official one-line installer:
+| Operating System | Architecture | Binary Asset | Supported Channels |
+|---|---|---|---|
+| **Windows 10 / 11 / Server** | AMD64 (x86_64) | `syn-windows-amd64.exe` | Stable, Beta, Alpha |
+| **Windows 11 on ARM** | ARM64 (Snapdragon) | `syn-windows-arm64.exe` | Stable, Beta, Alpha |
+| **macOS 12+ (Apple Silicon)** | ARM64 (M1/M2/M3/M4) | `syn-darwin-arm64` | Stable, Beta, Alpha |
+| **macOS 10.15+ (Intel)** | AMD64 (x86_64) | `syn-darwin-amd64` | Stable, Beta, Alpha |
+| **Linux (Debian/Ubuntu/RHEL)** | AMD64 (x86_64) | `syn-linux-amd64` | Stable, Beta, Alpha |
+| **Linux (Raspberry Pi/ARM64)**| ARM64 (aarch64) | `syn-linux-arm64` | Stable, Beta, Alpha |
+
+---
+
+## Installer Execution Flow
+
+```mermaid
+flowchart TD
+    Run["User runs 1-liner install script"] --> Detect["Detect Host OS & Architecture\n(Windows, Linux, macOS • x64, ARM64)"]
+    Detect --> Query["Query GitHub Releases API\nfor matching binary asset"]
+    Query --> Download["Download binary into ~/.syndicate/bin/"]
+    Download --> PathCheck{"Is ~/.syndicate/bin\nin User PATH?"}
+    PathCheck -->|Yes| Done["Ready! Run 'syn doctor'"]
+    PathCheck -->|No| Append["Append directory to PATH via\nPowerShell Registry or shell RC (.bashrc, .zshrc)"]
+    Append --> Done
+```
+
+---
+
+## Automated Global Installation
 
 ### Windows (PowerShell)
 
@@ -38,16 +64,25 @@ curl -fsSL https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protoc
 
 ---
 
-## Where Binaries Are Installed
+## Installation Directory Layout
 
 The installer copies the binary into a centralized user directory:
-- **Windows**: `C:\Users\<User>\.syndicate\bin\syn.exe`
-- **Linux & macOS**: `~/.syndicate/bin/syn`
 
-The script automatically configures your system `PATH`. If you need to manually add it to your profile:
+```text
+~/.syndicate/
+├── bin/
+│   └── syn (or syn.exe on Windows)
+└── features.json (persistent feature flag overrides)
+```
+
+If you need to manually configure your environment PATH:
 
 ```bash
+# Bash / Zsh
 export PATH="$HOME/.syndicate/bin:$PATH"
+
+# PowerShell
+$env:PATH += ";$HOME\.syndicate\bin"
 ```
 
 ---
@@ -57,7 +92,10 @@ export PATH="$HOME/.syndicate/bin:$PATH"
 Verify that the CLI is accessible and healthy:
 
 ```bash
+# Check version and VCS commit provenance
 syn --version
+
+# Run full diagnostic doctor suite
 syn doctor
 ```
 
@@ -65,7 +103,7 @@ syn doctor
 
 ## Updating the CLI
 
-When a new version is released, you can re-run the install one-liner or update directly:
+When a new version is released, you can update directly via the CLI:
 
 ```bash
 syn update

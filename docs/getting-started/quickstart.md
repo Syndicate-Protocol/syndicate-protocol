@@ -4,6 +4,18 @@ Get up and running with Syndicate Protocol in your terminal in under 2 minutes.
 
 ---
 
+## The Quickstart Journey
+
+```mermaid
+flowchart LR
+    Step1["1. Install CLI\n(~10 seconds)"] --> Step2["2. Adopt Project\n('syn adopt')"]
+    Step2 --> Step3["3. Verify Health\n('syn doctor')"]
+    Step3 --> Step4["4. Start Task\n('syn start')"]
+    Step4 --> Step5["5. Gate & Handoff\n('syn handoff')"]
+```
+
+---
+
 ## 1. Install the CLI
 
 Install the native `syn` CLI globally with a single command:
@@ -37,9 +49,10 @@ syn adopt
 ```
 
 The interactive wizard will guide you through:
+
 1. Detecting your project's technology stack (TypeScript, Go, Python, Rust, etc.).
 2. Generating the **5 Living Root Documents** tailored to your project.
-3. Setting up your automated verification script.
+3. Setting up your automated verification script (`ssot.config.json`).
 
 ---
 
@@ -61,7 +74,7 @@ syn verify
 
 ## 4. Daily Contributor Workflow
 
-Every session follows four simple steps:
+Every session follows a predictable four-step cadence:
 
 ```bash
 # 1. Onboard / Resume: Inspect active tasks and orient yourself
@@ -77,4 +90,23 @@ syn harden
 syn handoff
 ```
 
-Next: [Explore CLI Commands](../cli/commands.md) or [Configure AI Coding Agents](../guides/multi-agent.md).
+---
+
+## Quickstart Command Summary
+
+| Phase | Command | What It Does | Typical Time |
+|---|---|---|---|
+| **Setup** | `syn adopt` | Scans tech stack and bootstraps living documents | ~30s |
+| **Diagnostics** | `syn doctor` | Validates repository health, path, and security | <1s |
+| **Session Start** | `syn start` | Onboards agent/human, surfaces active tasks | <1s |
+| **Anti-Drift** | `syn verify` | AST signature audit and file reference validation | <15ms |
+| **Integrity** | `syn harden` | Adversarial scan for unfinished stubs and mocks | <50ms |
+| **Session End** | `syn handoff` | Cleans worktrees, updates state, and stages git | ~5s |
+
+---
+
+## Next Steps
+
+- [Deep Dive into CLI Commands](../cli/commands.md)
+- [Configure Multi-Agent AI Swarms](../guides/multi-agent.md)
+- [Launch the Cybernetic Web Dashboard](../guides/web-dashboard.md)

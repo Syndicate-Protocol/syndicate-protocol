@@ -4,15 +4,45 @@ Syndicate Protocol is designed from the ground up for multi-agent software engin
 
 ---
 
-## Supported Agents & IDEs
+## Multi-Agent Swarm Topology
 
-| Agent / IDE | Integration Mechanism | Command |
-|---|---|---|
-| **Claude Code** | Custom slash commands (`.claude/commands/syn-*.md`) | `syn adapt --agent claude` |
-| **Cursor** | MDC governance rules (`.cursor/rules/syndicate-protocol.mdc`) | `syn adapt --agent cursor` |
-| **Google Antigravity** | Agent skills & rules (`.agents/skills/syn-*/SKILL.md`) | `syn adapt --agent antigravity` |
-| **GitHub Copilot** | Custom workspace instructions (`.github/copilot-instructions.md`) | `syn adapt --agent copilot` |
-| **OpenAI Codex** | AGENTS standard (`AGENTS.md`) | Automatic |
+When multiple AI agents collaborate simultaneously, Syndicate Protocol coordinates them through isolated Git worktrees and a shared Single Source of Truth:
+
+```mermaid
+flowchart TD
+    subgraph RepoRoot ["Central Repository (Main Branch)"]
+        SSOT["SSOT.md • Architecture Invariants"]
+        TASK["TASK.md • Exclusive Task Truth"]
+        HANDOFF["HANDOFF.md • Active Hand-off Pointer"]
+    end
+
+    subgraph Manager ["Swarm Worktree Coordinator ('syn worktree')"]
+        LeaseEngine["Lease Manager & Heartbeat Monitor"]
+    end
+
+    subgraph Swarms ["Concurrent Agent Execution Worktrees"]
+        WT1[".worktrees/wt-task-1\n(Agent: Claude Code)"]
+        WT2[".worktrees/wt-task-2\n(Agent: Cursor AI)"]
+        WT3[".worktrees/wt-task-3\n(Agent: Antigravity)"]
+    end
+
+    RepoRoot <--> LeaseEngine
+    LeaseEngine -->|Isolated Worktree + Lease Lock| WT1
+    LeaseEngine -->|Isolated Worktree + Lease Lock| WT2
+    LeaseEngine -->|Isolated Worktree + Lease Lock| WT3
+```
+
+---
+
+## Supported Agents & Capability Matrix
+
+| Agent / IDE | Integration Mechanism | Custom Slash Commands | Context Memory | Worktree Support |
+|---|---|---|---|---|
+| **Claude Code** | Native commands (`.claude/commands/`) | `/syn-start`, `/syn-verify`, `/syn-harden`, `/syn-handoff` | High (via HANDOFF.md) | Full |
+| **Cursor** | MDC rules (`.cursor/rules/`) | Inline rules via `@syndicate-protocol` | High (via SSOT.md) | Full |
+| **Google Antigravity** | Agent skills (`.agents/skills/`) | Interactive skills & hooks | High (via memory KI) | Full |
+| **GitHub Copilot** | Workspace rules (`.github/copilot-instructions.md`) | Context instructions | Moderate | Full |
+| **OpenAI Codex** | Contributor guidelines (`AGENTS.md`) | Markdown standards | Moderate | Full |
 
 ---
 
@@ -25,10 +55,20 @@ syn adapt
 ```
 
 This inspects your project, detects installed agents, and generates tailored instruction files so that every agent immediately understands:
-- The authority of `SSOT.md`.
-- How to consult `TASK.md` before writing code.
-- How to record handoffs in `HANDOFF.md`.
-- The strict requirement of Rule 6 (no mocks or stubs).
+
+1. The constitutional authority of `SSOT.md`.
+2. How to consult `TASK.md` before writing code.
+3. How to record session transitions in `HANDOFF.md`.
+4. The strict requirement of Rule 6 (no mocks or stubs).
+
+To generate configurations for a specific agent:
+
+```bash
+syn adapt --agent claude
+syn adapt --agent cursor
+syn adapt --agent antigravity
+syn adapt --agent copilot
+```
 
 ---
 
@@ -36,10 +76,12 @@ This inspects your project, detects installed agents, and generates tailored ins
 
 When working with Claude Code, the following commands are available directly in your chat:
 
-- `/syn-start`: Automatically runs baseline verification, inspects active tasks, and selects the next item on the roadmap.
-- `/syn-verify`: Runs anti-drift verification on demand.
-- `/syn-harden`: Executes the adversarial hardening gate to verify recent changes are real, functioning code.
-- `/syn-handoff`: Wraps up the active session, updates `HANDOFF.md`, and stages git changes.
+| Slash Command | What It Does | When to Use |
+|---|---|---|
+| `/syn-start` | Runs baseline verification, inspects active tasks, and prompts next task | At the beginning of every session |
+| `/syn-verify` | Runs deep AST anti-drift check and validates file references | Before committing any code |
+| `/syn-harden` | Executes adversarial Rule 6 audit checking for stubs and fake completions | Before marking any task complete |
+| `/syn-handoff` | Wraps up the active session, updates `HANDOFF.md`, and stages git changes | At the end of every session |
 
 ---
 

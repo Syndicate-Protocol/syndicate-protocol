@@ -4,6 +4,33 @@ Syndicate Protocol embeds a high-performance **React 19 + Tailwind CSS + Vite** 
 
 ---
 
+## Web Dashboard Architecture
+
+The dashboard runs locally with zero external server dependencies, serving embedded static assets and a real-time terminal bridge over local WebSockets:
+
+```mermaid
+flowchart LR
+    subgraph Host ["Local Workstation"]
+        CLI["'syn web' CLI Daemon\n(:3000)"]
+        FS["Living Root Documents\n(SSOT, TASK, HANDOFF)"]
+        AST["AST Symbol Engine"]
+    end
+
+    subgraph Browser ["Cybernetic Web Dashboard (React 19)"]
+        UI["Live Kanban & Task Board"]
+        Graph["AST Dependency Graph"]
+        Terminal["ANSI Web Terminal Bridge"]
+    end
+
+    FS <--> CLI
+    AST <--> CLI
+    CLI -->|REST / JSON API| UI
+    CLI -->|WebSocket Streaming| Terminal
+    CLI -->|Symbol Graph Data| Graph
+```
+
+---
+
 ## Launching the Dashboard
 
 To launch the dashboard and automatically open it in your default web browser, run:
@@ -20,23 +47,33 @@ syn web --port 8080 --open
 
 ---
 
-## Key Dashboard Features
+## Dashboard Views & Features
 
-### 1. Live Task Board & Epistemic Tracking
-- Interactive Kanban view of milestones and tasks declared in `TASK.md`.
-- Real-time status badges for completed, in-progress, and pending work.
-- Quick filtering by milestone or keyword.
+| View | Primary Purpose | Capabilities |
+|---|---|---|
+| **Kanban Task Board** | Track project milestones & tasks | Live filtering, epistemic state badges, task details |
+| **Living Document Inspector** | Real-time markdown viewer | Render `SSOT.md`, `HANDOFF.md`, and `AGENTS.md` |
+| **AST Symbol Explorer** | Visual code relationship graph | Inspect exported symbols, functions, and cross-file references |
+| **Agent Swarm Telemetry** | Multi-agent coordination | Active worktree list, lease heartbeat status, and TTL |
+| **Web Terminal Bridge** | Execute commands from browser | Real-time ANSI streaming, command history, and local security |
 
-### 2. Multi-Agent Telemetry
-- Inspect active Git worktrees and agent leases.
-- Monitor anti-drift scores and Rule 6 hardening compliance in real time.
-- View symbol AST dependency graphs.
+---
 
-### 3. Integrated Web Terminal Bridge
-- Execute protocol commands directly from your browser.
-- Real-time streaming command output with ANSI terminal emulation.
-- Localhost security protections preventing unauthorized cross-origin requests.
+## Cybernetic Visual Themes
 
-### 4. Cybernetic Visual Themes
-- Choose between curated dark mode themes: Cyan, Violet, Emerald, and Amber.
-- Smooth transitions and zero cloud telemetry dependencies.
+The dashboard includes four custom-engineered dark mode cybernetic presets tailored for high readability:
+
+| Theme Preset | Primary Accent | Visual Characteristic |
+|---|---|---|
+| **Cyan (Default)** | Electric Cyan (`#00f0ff`) | Futuristic anti-drift operations terminal |
+| **Violet** | Deep Neon Purple (`#a855f7`) | Ambient low-fatigue nighttime engineering |
+| **Emerald** | Matrix Green (`#10b981`) | Classic cybernetic telemetry console |
+| **Amber** | Warm Goldenrod (`#f59e0b`) | High-contrast industrial heads-up display |
+
+---
+
+## Security & Privacy Protections
+
+- **100% Localhost Execution**: The web server binds exclusively to `localhost` / `127.0.0.1`.
+- **Zero Cloud Telemetry**: No project code, telemetry, or analytics are ever transmitted to any remote servers.
+- **Local Origin Verification**: Mutating REST endpoints and the terminal bridge strictly validate request headers to prevent browser-based DNS rebinding and cross-site attacks.

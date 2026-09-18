@@ -1,24 +1,60 @@
 # CLI Command Reference
 
-This document provides the authoritative user reference for all `syn` CLI commands and options.
+This document provides the authoritative user reference for all `syn` CLI commands, flags, and options.
 
 ---
 
-## Command Overview
+## Command Lifecycle Taxonomy
 
-| Command | Description |
-|---|---|
-| [`syn doctor`](#syn-doctor) | Run comprehensive repository health diagnostics. |
-| [`syn adopt`](#syn-adopt) | Interactively onboard an existing project to the protocol. |
-| [`syn verify`](#syn-verify) | Execute high-speed anti-drift and Single Source of Truth verification. |
-| [`syn harden`](#syn-harden) | Run adversarial Rule 6 audit scanning for stubs and fake completions. |
-| [`syn start`](#syn-start) | Session onboarding: view active milestones, pending tasks, and innovations. |
-| [`syn handoff`](#syn-handoff) | Session wrap-up: clean worktree leases, verify invariants, and stage changes. |
-| [`syn web`](#syn-web) | Launch the embedded React 19 cybernetic visual dashboard in your browser. |
-| [`syn dash`](#syn-dash) | Launch the full-screen terminal TUI monitoring dashboard. |
-| [`syn adapt`](#syn-adapt) | Compile agent configs and slash commands for Claude, Cursor, Copilot, etc. |
-| [`syn worktree`](#syn-worktree) | Manage isolated Git worktrees for concurrent AI agent swarms. |
-| [`syn update`](#syn-update) | Compile workspace binary and update global installation in system PATH. |
+The `syn` CLI commands are organized into distinct phases of the software development lifecycle:
+
+```mermaid
+flowchart TD
+    subgraph Onboarding ["1. Setup & Discovery"]
+        Adopt["syn adopt\n(Initialize Repo)"]
+        Doctor["syn doctor\n(Check Health)"]
+    end
+
+    subgraph Workflow ["2. Contributor Lifecycle"]
+        Start["syn start\n(Begin Task)"]
+        Verify["syn verify\n(Check Drift)"]
+        Harden["syn harden\n(Enforce Rule 6)"]
+        Handoff["syn handoff\n(Wrap Up)"]
+    end
+
+    subgraph Visualization ["3. Dashboards & Telemetry"]
+        Web["syn web\n(React 19 Dashboard)"]
+        Dash["syn dash\n(Terminal TUI)"]
+    end
+
+    subgraph AgentSwarms ["4. Swarm & Environment"]
+        Adapt["syn adapt\n(Compile Adapters)"]
+        Worktree["syn worktree\n(Isolated Trees)"]
+        Update["syn update\n(Update Binary)"]
+    end
+
+    Onboarding --> Workflow
+    Workflow <--> Visualization
+    Workflow <--> AgentSwarms
+```
+
+---
+
+## Command Matrix & Flag Reference
+
+| Command | Primary Flags | JSON Support | Exit Code 0 | Exit Code 1 |
+|---|---|---|---|---|
+| [`syn doctor`](#syn-doctor) | *(None)* | No | 100% compliant | Issues or warnings detected |
+| [`syn adopt`](#syn-adopt) | *(Interactive)* | No | Created successfully | Generation error |
+| [`syn verify`](#syn-verify) | `--deep`, `--templates`, `--json` | Yes | Zero drift | Drift / missing file detected |
+| [`syn harden`](#syn-harden) | `--json` | Yes | Zero stubs/mocks found | Fake completion detected |
+| [`syn start`](#syn-start) | `--skip-verify` | No | Task selected | Pre-check failed |
+| [`syn handoff`](#syn-handoff) | `--skip-verify` | No | State updated & staged | Verification failed |
+| [`syn web`](#syn-web) | `--port`, `--open` | No | Running server | Port bind failure |
+| [`syn dash`](#syn-dash) | *(None)* | No | Clean exit | Terminal render error |
+| [`syn adapt`](#syn-adapt) | `--agent <name>` | No | Configs generated | Unknown agent specified |
+| [`syn worktree`](#syn-worktree) | `create`, `list`, `remove` | Yes (`list --json`) | Success | Git worktree error |
+| [`syn update`](#syn-update) | *(None)* | No | Updated in PATH | Compilation/copy failure |
 
 ---
 
@@ -26,7 +62,8 @@ This document provides the authoritative user reference for all `syn` CLI comman
 
 ### `syn doctor`
 
-Performs a full audit of your local repository configuration:
+Performs a full diagnostic audit of your local repository configuration:
+
 - Confirms presence and placement of living root documents (`SSOT.md`, `README.md`, `TASK.md`, `HANDOFF.md`, `AGENTS.md`).
 - Confirms centralized documentation hub index.
 - Verifies every file referenced in completed tasks exists on disk.
@@ -55,7 +92,7 @@ syn adopt
 Sub-10ms anti-drift verification engine. Validates living root documents, checks file references in `TASK.md`, and detects shadow trackers.
 
 ```bash
-# Standard verification
+# Standard verification (<10ms)
 syn verify
 
 # Deep AST code signature audit + Git staleness analysis
@@ -150,7 +187,7 @@ syn adapt --agent copilot
 Manages isolated Git worktrees for concurrent, parallel multi-agent development swarms, complete with automatic lease management and cleanup.
 
 ```bash
-# Create an isolated worktree for a task
+# Create an isolated worktree for an agent
 syn worktree create <branch-name>
 
 # List active worktree leases
@@ -164,7 +201,7 @@ syn worktree remove <branch-name>
 
 ### `syn update`
 
-Compiles the current workspace binary and updates the globally installed binary at `~/.syndicate/bin/syn`, utilizing atomic swap mechanics to guarantee zero in-use file lock errors.
+Compiles the current workspace binary and updates the globally installed binary at `~/.syndicate/bin/syn`, utilizing atomic swap mechanics to guarantee zero in-use file lock errors on Windows, macOS, and Linux.
 
 ```bash
 syn update
