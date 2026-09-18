@@ -14,6 +14,7 @@ Welcome to the central documentation index for the **Syndicate Protocol** reposi
 - [🤝 Contributor Guide & Standards](../CONTRIBUTING.md) — Authoritative guide for open-source contributors covering environment setup, DCO sign-offs, Anti-SaaS license compliance, polyglot coding standards, and PR quality gates.
 - [🛡️ Violation Tracking CMS & Zero-Cost Fork Watchdog](audits/VIOLATION_CMS_SPEC.md) — Technical blueprint for server-side violation logging, zero-cost GitHub fork webhooks, deep crawler, and real-time alerts.
 - [🚀 Release Lifecycle & Distribution Architecture](RELEASE_LIFECYCLE.md) — SemVer release lifecycle (Alpha, Beta, RC, Stable), feature flags governance, automated GitHub Actions multi-arch pipeline, and channel-aware distribution.
+- [📦 Alpha Release Distribution & Documentation Handbook](ALPHA_RELEASE_AND_PAGES_GUIDE.md) — Step-by-step operational handbook for building and publishing Alpha releases, binary distribution matrix, and configuring GitHub Pages with custom domains.
 - [🐦 Woodpecker CI — Local & Self-Hosted CI/CD Guide](WOODPECKER_CI.md) — Self-hosted, 100% open-source continuous integration guide covering native local runners, ephemeral Woodpecker CLI execution, and Docker Compose stack.
 - [📦 Syndicate Protocol Kit](../syndicate-protocol-kit/README.md) — The ready-to-copy adoption template kit for external codebases.
 
