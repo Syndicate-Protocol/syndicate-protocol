@@ -1,29 +1,36 @@
-<p align="center">
-  <img src="./images/syndicate-protocol.svg" alt="Syndicate Protocol Logo" width="180" />
-</p>
+# Syndicate Protocol Documentation
 
-# 📚 Syndicate Protocol Documentation Hub
+Welcome to the official documentation for **Syndicate Protocol** — the Single Source of Truth (SSOT) and governance operating system for multi-agent and multi-contributor software engineering.
 
-Welcome to the central documentation index for the **Syndicate Protocol** repository.
+---
 
-## Canonical Reference Documents
+## Quick Navigation
 
-- [🧭 The Syndicate Protocol Specification](../README.md) — The founding specification detailing the SSOT methodology, 6-level authority hierarchy, 5 living root documents, 7 anti-drift rules, and hardening gates.
-- [🚀 Master Enhancement Blueprint](SYNDICATE_ENHANCEMENT_BLUEPRINT.md) — Comprehensive technical roadmap synthesizing research across 25 modern AI development frameworks into 8 actionable architecture pillars (CLI engine, agent adapters, adversarial hardening subagents, deep AST drift detection, local dashboard & MCP server, cryptographic evidence, delta specs, and worktree isolation).
-- [📖 Complete CLI Command & Testing Reference](COMMANDS.md) — Authoritative catalog of all 26 commands, subcommands, flags, daily workflows, and testing scenarios for `syn`.
-- [🤝 Contributor Guide & Standards](../CONTRIBUTING.md) — Authoritative guide for open-source contributors covering environment setup, DCO sign-offs, Anti-SaaS license compliance, polyglot coding standards, and PR quality gates.
-- [🛡️ Violation Tracking CMS & Zero-Cost Fork Watchdog](audits/VIOLATION_CMS_SPEC.md) — Technical blueprint for server-side violation logging, zero-cost GitHub fork webhooks, deep crawler, and real-time alerts.
-- [🚀 Release Lifecycle & Distribution Architecture](RELEASE_LIFECYCLE.md) — SemVer release lifecycle (Alpha, Beta, RC, Stable), feature flags governance, automated GitHub Actions multi-arch pipeline, and channel-aware distribution.
-- [📦 Alpha Release Distribution & Documentation Handbook](ALPHA_RELEASE_AND_PAGES_GUIDE.md) — Step-by-step operational handbook for building and publishing Alpha releases, binary distribution matrix, and configuring GitHub Pages with custom domains.
-- [🐦 Woodpecker CI — Local & Self-Hosted CI/CD Guide](WOODPECKER_CI.md) — Self-hosted, 100% open-source continuous integration guide covering native local runners, ephemeral Woodpecker CLI execution, and Docker Compose stack.
-- [📦 Syndicate Protocol Kit](../syndicate-protocol-kit/README.md) — The ready-to-copy adoption template kit for external codebases.
+### 🚀 Getting Started
+- [**Quickstart**](./getting-started/quickstart.md) — Get up and running in under 2 minutes.
+- [**Installation**](./getting-started/installation.md) — Install the `syn` CLI globally on Windows, macOS, or Linux.
+- [**Project Adoption**](./getting-started/adoption.md) — Adopt the protocol in an existing codebase or initialize a new project.
 
-## Living Root Documents
+### 📖 Reference & Manuals
+- [**CLI Command Reference**](./cli/commands.md) — Complete user guide for all `syn` CLI commands and options.
+- [**Multi-Agent Integration**](./guides/multi-agent.md) — Connect Claude Code, Cursor, Antigravity, and GitHub Copilot.
+- [**Cybernetic Web Dashboard**](./guides/web-dashboard.md) — Launch and navigate the embedded React 19 visual dashboard.
+- [**Contributing Guide**](../CONTRIBUTING.md) — How to contribute to templates, specifications, and documentation.
 
-Per the Syndicate Protocol methodology, current project truth lives exclusively in the 5 root files:
+---
 
-1. [`SSOT.md`](../SSOT.md) — Precedence rules, conflict resolution, and non-negotiable invariants.
-2. [`README.md`](../README.md) — Public repository orientation and quickstart.
-3. [`TASK.md`](../TASK.md) — Authoritative implementation progress tracker.
-4. [`HANDOFF.md`](../HANDOFF.md) — Active operational pointer and session state.
-5. [`AGENTS.md`](../AGENTS.md) — Contributor standards and coding guidelines.
+## What is Syndicate Protocol?
+
+Syndicate Protocol solves **context loss, documentation drift, and phantom completions** when humans and AI agents collaborate on software projects.
+
+It establishes:
+1. **5 Living Root Documents**: Single Source of Truth (`SSOT.md`), Overview (`README.md`), Active Tasks (`TASK.md`), Session Hand-off (`HANDOFF.md`), and Contributor Standards (`AGENTS.md`).
+2. **Sub-10ms Automated Anti-Drift Verification**: Automated CLI engine (`syn verify`) that validates documentation matches real code signatures and verifies file references.
+3. **Adversarial Hardening Gate**: Strict verification (`syn harden`) that ensures tasks are only marked complete when real, working code exists — eliminating stubs, mocks, and placeholders.
+4. **Universal Agent Adapters**: Compiles custom slash commands and governance rules for Claude Code, Cursor, Antigravity, and Copilot.
+
+---
+
+## Community & Open Access
+
+Syndicate Protocol's templates, living documents, specifications, and documentation are 100% open and free under the [Syndicate Community Source License](../LICENSE). Pre-compiled standalone binaries are distributed free of charge for all supported operating systems.
