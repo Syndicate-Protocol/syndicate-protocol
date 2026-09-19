@@ -11,7 +11,7 @@
 [![CLI: syn](https://img.shields.io/badge/CLI-syn-cyan.svg)](https://github.com/Syndicate-Protocol/syndicate-protocol)
 
 > [!IMPORTANT]
-> **Public Alpha Release (`v0.2.0-alpha.2`)**:
+> **Public Alpha Release (`v0.2.0-alpha.3`)**:
 > Syndicate Protocol is currently in its initial **Public Alpha** phase. All core Single Source of Truth (SSOT) protocols, living document governance invariants, multi-agent adapters, and CLI commands (`syn verify`, `syn harden`, `syn doctor`, `syn web`) are fully operational, tested, and enforced under strict zero-stub invariants.
 >
 > As an Alpha release:

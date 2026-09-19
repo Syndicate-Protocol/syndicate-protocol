@@ -53,6 +53,7 @@ flowchart TD
 |---|---|---|---|---|
 | [`syn doctor`](#syn-doctor) | `--fix` | No | 100% compliant | Issues or warnings detected |
 | [`syn adopt`](#syn-adopt) | *(Interactive)* | No | Created successfully | Generation error |
+| [`syn rollback`](#syn-rollback) | `--clean` | No | Restored from backup | Backup not found |
 | [`syn verify`](#syn-verify) | `--deep`, `--templates`, `--json` | Yes | Zero drift | Drift / missing file detected |
 | [`syn harden`](#syn-harden) | `--json` | Yes | Zero stubs/mocks found | Fake completion detected |
 | [`syn start`](#syn-start) | `--skip-verify` | No | Task selected | Pre-check failed |
@@ -98,6 +99,20 @@ Launches the interactive project adoption wizard. Automatically detects project 
 
 ```bash
 syn adopt
+```
+
+---
+
+### `syn rollback`
+
+Restores the repository governance and documents to their exact pre-init / pre-adopt state from a `.syndicate/backups/` archive, verifying SHA-256 integrity against `manifest.json`.
+
+```bash
+# Restore to most recent pre-init backup state
+syn rollback
+
+# Restore from a specific backup directory
+syn rollback .syndicate/backups/backup_20260919_120000
 ```
 
 ---

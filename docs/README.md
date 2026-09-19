@@ -16,7 +16,7 @@ description: Syndicate Protocol — Portable Single Source of Truth & Multi-Agen
 </p>
 
 > [!IMPORTANT]
-> **Public Alpha Release (`v0.2.0-alpha.2`)**:
+> **Public Alpha Release (`v0.2.0-alpha.3`)**:
 > Welcome to the official documentation for **Syndicate Protocol**! The protocol is currently in its initial **Public Alpha** phase. All core SSOT protocols, living root document engines, multi-agent adapters, and CLI commands (`syn verify`, `syn harden`, `syn doctor`, `syn web`) are fully operational, tested, and enforced under strict zero-stub invariants.
 >
 > Feedback, issue reports, and community contributions are welcome as we advance toward v1.0.0.
