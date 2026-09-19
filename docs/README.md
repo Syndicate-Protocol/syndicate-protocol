@@ -5,7 +5,7 @@
 [![Status: Active](https://img.shields.io/badge/Status-Active-success.svg)](https://github.com/Syndicate-Protocol/syndicate-protocol)
 
 <p align="center">
-  <img src="./images/syndicate-protocol.svg" alt="Syndicate Protocol Logo" width="160" />
+  <img src="./images/syndicate-protocol.png" alt="Syndicate Protocol Logo" width="160" />
 </p>
 
 > [!IMPORTANT]

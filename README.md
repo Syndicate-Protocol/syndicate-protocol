@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/syndicate-protocol.svg" alt="Syndicate Protocol Logo" width="220" />
+  <img src="docs/images/syndicate-protocol.png" alt="Syndicate Protocol Logo" width="220" />
 </p>
 
 # The Syndicate Protocol
