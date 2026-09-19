@@ -1,0 +1,39 @@
+name: Public Repository Integrity & Code Quality Gate
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  public-verify:
+    name: Public Mirror SSOT & Script Hygiene
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Public Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify Public SSOT Integrity
+        run: |
+          node scripts/verify-ssot.mjs
+
+      - name: Validate POSIX Installer Syntax
+        run: |
+          bash -n scripts/install.sh
+
+      - name: Verify Public Asset Boundary
+        run: |
+          # Ensure no closed-source directories or internal audits exist in public tree
+          test ! -d "cmd"
+          test ! -d "internal"
+          test ! -d "web"
+          test ! -f "docs/audits/VIOLATION_CMS_SPEC.md"
