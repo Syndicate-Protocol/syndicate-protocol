@@ -87,6 +87,26 @@ If you prefer not to use the interactive CLI or want to inspect the templates fi
 
 ---
 
+## ⚖️ License Sovereignty for Adopted Projects
+
+When you adopt Syndicate Protocol into an existing or new project (e.g., a commercial product, a client website, or an open-source library):
+
+1. **Your Project Keeps Its Own License**:
+   The **Syndicate Community Source License** governs only the Syndicate Protocol software itself (`syn` binary, CLI engine, and protocol source code). Adopting Syndicate Protocol does **not** relicense your project.
+2. **Permitted Development & Governance Use**:
+   Under Section 1(c) ("Internal Use") and Section 2(b) ("Permitted Uses"), using Syndicate Protocol to govern, verify, and streamline development workflows is 100% free and permitted.
+3. **Full Freedom of Licensing**:
+   Your repository maintains 100% license sovereignty. You can use **Proprietary / All Rights Reserved**, **MIT**, **Apache 2.0**, **BSD**, **GPL**, or no license at all.
+4. **No Invariant 5 Requirement**:
+   Your [`SSOT.md`](#) does not need Syndicate Protocol's Level 1 Invariant 5 (Anti-SaaS covenant). You define your own constitutional invariants that match your business, product, and architectural requirements.
+5. **Verification Awareness**:
+   The `syn verify` and `syn harden` engines automatically detect that your repository is an adopted project and affirm your license sovereignty without warnings or penalties:
+   ```bash
+   ✅ [VALID] License Sovereignty: Adopted project governed under Section 2(b) Permitted Development Use (License: Proprietary / All Rights Reserved)
+   ```
+
+---
+
 ## What Happens After Adoption?
 
 Once adopted:
@@ -94,3 +114,4 @@ Once adopted:
 - Your team (and any AI agents you pair with) will have a persistent, structured memory of the codebase.
 - You can run `syn verify` at any time to catch documentation staleness or broken file links.
 - You can run `syn harden` to prevent "fake completion" PRs before merging.
+

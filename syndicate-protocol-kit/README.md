@@ -76,6 +76,13 @@ Your project's own `README.md` (public overview/quick start) is not templated he
 
 7. **Adopt the onboarding sequence** from [`AGENTS.md`](../AGENTS.md) and [`README.md`](../README.md) as the first thing every contributor — human or AI — does at the start of a session on this project. Consider linking to it (or a copy of it) from your own `README.md`.
 
+## ⚖️ License Sovereignty Guarantee
+
+Adopting the Syndicate Protocol Kit into your codebase does **not** change, restrict, or relicense your repository:
+- **Your Project Owns Its License**: You may use any license you choose (Proprietary / All Rights Reserved, Commercial, MIT, Apache 2.0, BSD, GPL, or no license at all).
+- **Tool vs. Product**: The Syndicate Community Source License applies solely to the Syndicate Protocol CLI engine and core repository. It does not infect or dictate the licensing of software built or governed using the protocol.
+- **Verification Compatibility**: Both `syn verify` and `syn harden` detect adopted projects and validate them under Section 2(b) Permitted Development Use without requiring Syndicate Protocol license covenants or Invariant 5.
+
 ## Customizing beyond the template
 
 The four templated documents intentionally keep the same five-document structure and six anti-drift rules as the reference methodology — that consistency is what makes the pattern easy to recognize across projects. Within that structure, everything is yours to adapt: add sections to `AGENTS.md` for your team's specific standards, extend `TASK.md`'s legend if you need more states than pending/in-progress/complete, add fields to `HANDOFF.md` if your hand-off process needs more than what's here. What you shouldn't do is drop the core discipline — one authoritative task tracker, one authoritative hand-off pointer, an automated verification gate, and the no-fake-complete rule are what make the rest of it actually hold up under pressure.
