@@ -8,7 +8,7 @@ on:
 
 jobs:
   public-verify:
-    name: Public Mirror SSOT & Script Hygiene
+    name: Public Mirror Integrity & Security Boundary
     runs-on: ubuntu-latest
 
     steps:
@@ -22,18 +22,49 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Verify Public SSOT Integrity
+      - name: Verify Public Root Assets & Security Policy
         run: |
-          node scripts/verify-ssot.mjs
+          echo "Checking essential public root files..."
+          for file in README.md LICENSE CONTRIBUTING.md SSOT.md AGENTS.md SECURITY.md .gitignore package.json; do
+            if [ ! -f "$file" ]; then
+              echo "❌ Missing public asset: $file"
+              exit 1
+            fi
+            echo "  ✅ [FOUND] $file"
+          done
+
+      - name: Verify Template Kit & Scripts
+        run: |
+          echo "Checking distribution template kit..."
+          for tpl in syndicate-protocol-kit/SSOT.template.md syndicate-protocol-kit/TASK.template.md syndicate-protocol-kit/HANDOFF.template.md syndicate-protocol-kit/AGENTS.template.md syndicate-protocol-kit/ssot.config.example.json; do
+            if [ ! -f "$tpl" ]; then
+              echo "❌ Missing kit template: $tpl"
+              exit 1
+            fi
+            echo "  ✅ [FOUND] $tpl"
+          done
+
+      - name: Verify User Documentation Suite & Brand Assets
+        run: |
+          echo "Checking public user documentation and branding..."
+          for doc in docs/README.md docs/index.md docs/security.md docs/cli/commands.md docs/getting-started/quickstart.md docs/getting-started/installation.md docs/getting-started/adoption.md docs/guides/multi-agent.md docs/guides/web-dashboard.md docs/images/syndicate-protocol.png; do
+            if [ ! -f "$doc" ]; then
+              echo "❌ Missing public doc: $doc"
+              exit 1
+            fi
+            echo "  ✅ [FOUND] $doc"
+          done
 
       - name: Validate POSIX Installer Syntax
         run: |
           bash -n scripts/install.sh
 
-      - name: Verify Public Asset Boundary
+      - name: Verify Closed-Source Quarantine Boundary
         run: |
-          # Ensure no closed-source directories or internal audits exist in public tree
+          echo "Auditing for closed-source leakage in public mirror..."
           test ! -d "cmd"
           test ! -d "internal"
           test ! -d "web"
           test ! -f "docs/audits/VIOLATION_CMS_SPEC.md"
+          test ! -f "docs/SYNDICATE_ENHANCEMENT_BLUEPRINT.md"
+          echo "  ✅ [PASSED] Zero closed-source source files or internal blueprints detected."
