@@ -1,6 +1,13 @@
+---
+layout: default
+title: Project Adoption Guide
+description: Adopt Syndicate Protocol in any codebase — new or existing — in under 60 seconds
+---
+
 # Project Adoption Guide
 
 You can adopt Syndicate Protocol in any codebase — new or existing — in under 60 seconds.
+
 
 ---
 

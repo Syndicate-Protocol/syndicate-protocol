@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ page.title | default: site.title }} — {{ site.description }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/images/syndicate-protocol.png' | absolute_url }}">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ '/images/syndicate-protocol.png' | relative_url }}">
+  
+  <!-- Cybernetic Dark Theme Stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  
+  <!-- Mermaid.js for interactive diagrams -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+
+  <!-- Sticky Cybernetic Header -->
+  <header class="cyber-header">
+    <div class="header-container">
+      <a href="{{ '/' | relative_url }}" class="brand-wrapper">
+        <img src="{{ '/images/syndicate-protocol.png' | relative_url }}" alt="Syndicate Protocol Logo" class="brand-logo">
+        <span class="brand-title">SYNDICATE PROTOCOL</span>
+        <span class="release-pill">v0.2.0-alpha.1 [ALPHA]</span>
+      </a>
+      
+      <nav class="header-nav">
+        <a href="{{ '/' | relative_url }}" class="nav-link">Overview</a>
+        <a href="{{ '/getting-started/quickstart.html' | relative_url }}" class="nav-link">Quickstart</a>
+        <a href="{{ '/getting-started/installation.html' | relative_url }}" class="nav-link">Installation</a>
+        <a href="{{ '/cli/commands.html' | relative_url }}" class="nav-link">CLI Commands</a>
+        <a href="{{ '/guides/multi-agent.html' | relative_url }}" class="nav-link">Multi-Agent</a>
+        <a href="{{ '/guides/web-dashboard.html' | relative_url }}" class="nav-link">Web UI</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://github.com/Syndicate-Protocol/syndicate-protocol/releases" target="_blank" rel="noopener noreferrer" class="btn-releases">
+          ⚡ Releases
+        </a>
+        <a href="https://github.com/Syndicate-Protocol/syndicate-protocol" target="_blank" rel="noopener noreferrer" class="btn-github">
+          <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Portal Layout -->
+  <div class="portal-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="portal-sidebar">
+      <div class="sidebar-section">
+        <h4 class="sidebar-title">Getting Started</h4>
+        <ul class="sidebar-menu">
+          <li><a href="{{ '/' | relative_url }}">Overview</a></li>
+          <li><a href="{{ '/getting-started/quickstart.html' | relative_url }}">5-Minute Quickstart</a></li>
+          <li><a href="{{ '/getting-started/installation.html' | relative_url }}">Installation & Binary</a></li>
+          <li><a href="{{ '/getting-started/adoption.html' | relative_url }}">Adoption Wizard</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h4 class="sidebar-title">CLI & Commands</h4>
+        <ul class="sidebar-menu">
+          <li><a href="{{ '/cli/commands.html' | relative_url }}">Complete CLI Reference</a></li>
+          <li><a href="{{ '/cli/commands.html#syn-doctor' | relative_url }}">syn doctor</a></li>
+          <li><a href="{{ '/cli/commands.html#syn-verify' | relative_url }}">syn verify</a></li>
+          <li><a href="{{ '/cli/commands.html#syn-harden' | relative_url }}">syn harden</a></li>
+          <li><a href="{{ '/cli/commands.html#syn-web' | relative_url }}">syn web (Dashboard)</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h4 class="sidebar-title">Multi-Agent Swarm</h4>
+        <ul class="sidebar-menu">
+          <li><a href="{{ '/guides/multi-agent.html' | relative_url }}">Multi-Agent Governance</a></li>
+          <li><a href="{{ '/guides/multi-agent.html#supported-agents' | relative_url }}">Claude, Cursor, AGY</a></li>
+          <li><a href="{{ '/guides/web-dashboard.html' | relative_url }}">Cybernetic Web UI</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h4 class="sidebar-title">Governance & Community</h4>
+        <ul class="sidebar-menu">
+          <li><a href="https://github.com/Syndicate-Protocol/syndicate-protocol/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Community License (Anti-SaaS)</a></li>
+          <li><a href="https://github.com/Syndicate-Protocol/syndicate-protocol/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing Guide</a></li>
+          <li><a href="mailto:splv@syntaxsyndicate.com">Report License Violation</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Markdown Content -->
+    <main class="markdown-container">
+      <article class="markdown-body">
+        {{ content }}
+      </article>
+    </main>
+  </div>
+
+  <!-- Cybernetic Footer -->
+  <footer class="cyber-footer">
+    <div class="footer-container">
+      <!-- 100% Zero-Fee Guarantee Banner -->
+      <div class="zero-fee-banner">
+        <div class="zero-fee-icon">🛡️</div>
+        <div class="zero-fee-text">
+          <h4>100% Zero-Fee Guarantee & Consumer Protection Notice</h4>
+          <p>
+            Syndicate Protocol will <strong>never</strong> charge any fee, subscription, or paywall. 
+            If you have been charged for this protocol directly or indirectly, please demand an immediate refund and report it to 
+            <a href="mailto:splv@syntaxsyndicate.com?subject=Syndicate%20Protocol%20License%20Violation" class="report-link">splv@syntaxsyndicate.com</a> 
+            with subject <em>'Syndicate Protocol License Violation'</em>.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 <strong>Syntax Syndicate</strong>. Released under the 
+          <a href="https://github.com/Syndicate-Protocol/syndicate-protocol/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Syndicate Community Source License</a>.
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/Syndicate-Protocol/syndicate-protocol" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          <a href="https://github.com/Syndicate-Protocol/syndicate-protocol/releases" target="_blank" rel="noopener noreferrer">Releases (Alpha)</a>
+          <a href="mailto:splv@syntaxsyndicate.com">Contact / Legal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts: Mermaid & Code Copy -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight active navigation link
+      const currentPath = window.location.pathname;
+      document.querySelectorAll('.sidebar-menu a, .header-nav a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && (currentPath.endsWith(href) || (href !== '/' && currentPath.includes(href)))) {
+          link.classList.add('active');
+        }
+      });
+
+      // 2. Add copy button to code blocks
+      document.querySelectorAll('.markdown-body pre').forEach(pre => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block-wrapper';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-btn';
+        copyBtn.textContent = 'Copy';
+        copyBtn.title = 'Copy code to clipboard';
+        wrapper.appendChild(copyBtn);
+
+        copyBtn.addEventListener('click', () => {
+          const code = pre.querySelector('code') ? pre.querySelector('code').innerText : pre.innerText;
+          navigator.clipboard.writeText(code).then(() => {
+            copyBtn.textContent = 'Copied!';
+            copyBtn.classList.add('copied');
+            setTimeout(() => {
+              copyBtn.textContent = 'Copy';
+              copyBtn.classList.remove('copied');
+            }, 2000);
+          });
+        });
+      });
+
+      // 3. Render Mermaid diagrams
+      const mermaidCodeElements = document.querySelectorAll('pre code.language-mermaid, .language-mermaid pre code');
+      if (mermaidCodeElements.length > 0) {
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: 'dark',
+          themeVariables: {
+            darkMode: true,
+            background: '#070a12',
+            primaryColor: '#161f36',
+            primaryTextColor: '#f8fafc',
+            primaryBorderColor: '#00f5ff',
+            lineColor: '#00f5ff',
+            secondaryColor: '#251747',
+            tertiaryColor: '#0f172a'
+          }
+        });
+
+        mermaidCodeElements.forEach(codeEl => {
+          const container = document.createElement('div');
+          container.className = 'mermaid';
+          container.textContent = codeEl.textContent.trim();
+          const target = codeEl.closest('.language-mermaid') || codeEl.closest('.code-block-wrapper') || codeEl.closest('pre');
+          target.parentNode.replaceChild(container, target);
+        });
+
+        mermaid.run();
+      }
+
+      // 4. Transform GitHub blockquote alerts [!NOTE], [!IMPORTANT], etc.
+      document.querySelectorAll('.markdown-body blockquote').forEach(bq => {
+        const text = bq.innerHTML;
+        const alerts = [
+          { tag: '\\[\\!NOTE\\]', class: 'note', title: 'Note' },
+          { tag: '\\[\\!TIP\\]', class: 'tip', title: 'Tip' },
+          { tag: '\\[\\!IMPORTANT\\]', class: 'important', title: 'Important' },
+          { tag: '\\[\\!WARNING\\]', class: 'warning', title: 'Warning' },
+          { tag: '\\[\\!CAUTION\\]', class: 'caution', title: 'Caution' }
+        ];
+
+        for (const alert of alerts) {
+          const regex = new RegExp(`^<p>\\s*${alert.tag}\\s*(?:<br>)?\\s*`, 'i');
+          if (regex.test(text)) {
+            bq.className = `alert-callout ${alert.class}`;
+            bq.innerHTML = text.replace(regex, `<p><strong>${alert.title}:</strong> `);
+            break;
+          }
+        }
+      });
+
+      // 5. Rewrite local .md links to .html for seamless Jekyll navigation
+      document.querySelectorAll('.markdown-body a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && href.endsWith('.md') && !href.startsWith('http') && !href.startsWith('//')) {
+          a.setAttribute('href', href.replace(/\.md$/, '.html'));
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

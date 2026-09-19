@@ -1,6 +1,13 @@
+---
+layout: default
+title: Complete CLI Reference
+description: Authoritative user reference for all syn CLI commands, flags, and JSON outputs
+---
+
 # CLI Command Reference
 
 This document provides the authoritative user reference for all `syn` CLI commands, flags, and options.
+
 
 ---
 

@@ -1,8 +1,15 @@
+---
+layout: default
+title: Documentation Overview
+description: Syndicate Protocol — Portable Single Source of Truth & Multi-Agent Swarm Governance
+---
+
 # Syndicate Protocol Documentation
 
 [![Release: Alpha](https://img.shields.io/badge/Release-v0.2.0--alpha.1_(Alpha)-orange.svg)](https://github.com/Syndicate-Protocol/syndicate-protocol/releases)
 [![License: Syndicate Community](https://img.shields.io/badge/License-Syndicate_Community_(Anti--SaaS)-blueviolet.svg)](../LICENSE)
 [![Status: Active](https://img.shields.io/badge/Status-Active-success.svg)](https://github.com/Syndicate-Protocol/syndicate-protocol)
+
 
 <p align="center">
   <img src="./images/syndicate-protocol.png" alt="Syndicate Protocol Logo" width="160" />

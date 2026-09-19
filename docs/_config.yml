@@ -1,0 +1,12 @@
+title: Syndicate Protocol
+description: Single Source of Truth & Multi-Agent Swarm Governance Protocol
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

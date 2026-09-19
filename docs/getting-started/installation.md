@@ -1,6 +1,13 @@
+---
+layout: default
+title: Installation Guide
+description: Zero-dependency standalone binary installation for Windows, macOS, and Linux
+---
+
 # Installation Guide
 
 Syndicate Protocol is distributed as a single, zero-dependency standalone binary (`syn`) for Windows, macOS, and Linux across Intel/AMD and ARM architectures.
+
 
 ---
 

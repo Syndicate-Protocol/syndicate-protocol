@@ -1,6 +1,13 @@
+---
+layout: default
+title: Multi-Agent Integration Guide
+description: Universal multi-agent governance across Claude Code, Cursor, Antigravity, Copilot, and Codex
+---
+
 # Multi-Agent Integration Guide
 
 Syndicate Protocol is designed from the ground up for multi-agent software engineering, ensuring consistent context, zero drift, and unified governance across different AI coding environments.
+
 
 ---
 

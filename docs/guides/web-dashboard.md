@@ -1,6 +1,13 @@
+---
+layout: default
+title: Cybernetic Web Dashboard Guide
+description: High-performance React 19 visual telemetry and terminal bridge embedded directly in syn
+---
+
 # Cybernetic Web Dashboard Guide
 
 Syndicate Protocol embeds a high-performance **React 19 + Tailwind CSS + Vite** visual dashboard directly inside the standalone CLI binary.
+
 
 ---
 

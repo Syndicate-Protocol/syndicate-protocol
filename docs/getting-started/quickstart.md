@@ -1,6 +1,13 @@
+---
+layout: default
+title: 5-Minute Quickstart
+description: Get up and running with Syndicate Protocol in your terminal in under 2 minutes
+---
+
 # Quickstart Guide
 
 Get up and running with Syndicate Protocol in your terminal in under 2 minutes.
+
 
 ---
 
