@@ -297,3 +297,23 @@ syn hook install
 syn hook remove
 ```
 
+---
+
+### `syn update`
+
+Updates the Syndicate Protocol CLI executable. In client installations, `syn update` pulls the latest release directly from GitHub ([`Syndicate-Protocol/syndicate-protocol`](https://github.com/Syndicate-Protocol/syndicate-protocol)), verifies its SHA-256 cryptographic checksum, and performs an atomic in-place upgrade.
+
+```bash
+# Check for available updates without installing
+syn update --check
+
+# Pull and install the latest release from GitHub
+syn update
+
+# Target a specific release channel (alpha, beta, rc, stable)
+syn update --channel alpha
+
+# Install a specific release tag
+syn update --tag v0.2.0-alpha.3
+```
+
