@@ -1,10 +1,18 @@
 # Syndicate Protocol Documentation
 
+[![Release: Alpha](https://img.shields.io/badge/Release-v0.2.0--alpha.1_(Alpha)-orange.svg)](https://github.com/Syndicate-Protocol/syndicate-protocol/releases)
+[![License: Syndicate Community](https://img.shields.io/badge/License-Syndicate_Community_(Anti--SaaS)-blueviolet.svg)](../LICENSE)
+[![Status: Active](https://img.shields.io/badge/Status-Active-success.svg)](https://github.com/Syndicate-Protocol/syndicate-protocol)
+
 <p align="center">
   <img src="./images/syndicate-protocol.svg" alt="Syndicate Protocol Logo" width="160" />
 </p>
 
-Welcome to the official documentation for **Syndicate Protocol** — the Single Source of Truth (SSOT) and governance operating system for multi-agent and multi-contributor software engineering.
+> [!IMPORTANT]
+> **Public Alpha Release (`v0.2.0-alpha.1`)**:
+> Welcome to the official documentation for **Syndicate Protocol**! The protocol is currently in its initial **Public Alpha** phase. All core SSOT protocols, living root document engines, multi-agent adapters, and CLI commands (`syn verify`, `syn harden`, `syn doctor`, `syn web`) are fully operational, tested, and enforced under strict zero-stub invariants.
+>
+> Feedback, issue reports, and community contributions are welcome as we advance toward v1.0.0.
 
 ---
 
@@ -122,4 +130,3 @@ There will **NEVER** be a fee, charge, paid tier, or subscription associated wit
 >    - **Email**: `splv@syntaxsyndicate.com`
 >    - **Subject**: `Syndicate Protocol License Violation`
 >    *(Please include transaction receipts, vendor names, or URLs. An online reporting form will also be available on our website).*
-

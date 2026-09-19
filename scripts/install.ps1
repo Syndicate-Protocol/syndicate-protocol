@@ -1,7 +1,7 @@
 # Syndicate Protocol — Windows Global Installer
-# One-liner (Stable):  irm https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/master/scripts/install.ps1 | iex
-# One-liner (Beta):    & ([scriptblock]::Create((irm https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/master/scripts/install.ps1))) -Channel beta
-# One-liner (Version): & ([scriptblock]::Create((irm https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/master/scripts/install.ps1))) -Version v0.2.0-beta.1
+# One-liner (Stable):  irm https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/main/scripts/install.ps1 | iex
+# One-liner (Alpha):   & ([scriptblock]::Create((irm https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/main/scripts/install.ps1))) -Channel alpha
+# One-liner (Version): & ([scriptblock]::Create((irm https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/main/scripts/install.ps1))) -Version v0.2.0-alpha.1
 
 param(
     [string]$Channel = "stable",

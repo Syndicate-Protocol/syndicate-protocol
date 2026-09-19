@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Syndicate Protocol — macOS & Linux Global Installer
-# One-liner (Stable):  curl -fsSL https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/master/scripts/install.sh | bash
-# One-liner (Beta):    curl -fsSL https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/master/scripts/install.sh | bash -s -- --channel beta
-# One-liner (Version): curl -fsSL https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/master/scripts/install.sh | bash -s -- --version v0.2.0-beta.1
+# One-liner (Stable):  curl -fsSL https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/main/scripts/install.sh | bash
+# One-liner (Alpha):   curl -fsSL https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/main/scripts/install.sh | bash -s -- --channel alpha
+# One-liner (Version): curl -fsSL https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/main/scripts/install.sh | bash -s -- --version v0.2.0-alpha.1
 
 set -euo pipefail
 

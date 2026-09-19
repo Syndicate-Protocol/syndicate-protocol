@@ -1,7 +1,7 @@
 /**
  * Generic Single Source of Truth (SSOT) & Anti-Drift Integrity Validator.
  *
- * Part of the Syndicate Protocol Kit — see docs/SYNDICATE_PROTOCOL.md
+ * Part of the Syndicate Protocol Kit — see README.md
  * for the methodology this enforces. Config-driven so it works unmodified across
  * projects; edit ssot.config.json at the repo root, not this file.
  *
@@ -21,7 +21,7 @@ const CONFIG_PATH = path.join(ROOT_DIR, "ssot.config.json");
 
 if (!fs.existsSync(CONFIG_PATH)) {
 	console.error(
-		`❌ Missing ssot.config.json at repo root. Copy docs/syndicate-protocol-kit/ssot.config.example.json to ${CONFIG_PATH} and fill it in.`,
+		`❌ Missing ssot.config.json at repo root. Copy syndicate-protocol-kit/ssot.config.example.json to ${CONFIG_PATH} and fill it in.`,
 	);
 	process.exit(1);
 }

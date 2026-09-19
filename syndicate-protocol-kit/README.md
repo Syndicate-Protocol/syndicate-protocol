@@ -4,7 +4,7 @@
 
 # Syndicate Protocol Kit
 
-A drop-in kit for adopting **the Syndicate Protocol** — the multi-agent / multi-contributor SSOT methodology described in [`docs/SYNDICATE_PROTOCOL.md`](../SYNDICATE_PROTOCOL.md) — in **any other project**. Every file here is generic — no project-specific content, only `[PLACEHOLDER]` markers and instructional comments.
+A drop-in kit for adopting **the Syndicate Protocol** — the multi-agent / multi-contributor SSOT methodology described in [`README.md`](../README.md) — in **any other project**. Every file here is generic — no project-specific content, only `[PLACEHOLDER]` markers and instructional comments.
 
 ## What's in this kit
 
@@ -26,17 +26,17 @@ Your project's own `README.md` (public overview/quick start) is not templated he
 
 1. **Copy the four living documents** to your repository root, dropping `.template` from the filename:
    ```bash
-   cp docs/syndicate-protocol-kit/SSOT.template.md     ./SSOT.md
-   cp docs/syndicate-protocol-kit/AGENTS.template.md   ./AGENTS.md
-   cp docs/syndicate-protocol-kit/TASK.template.md     ./TASK.md
-   cp docs/syndicate-protocol-kit/HANDOFF.template.md  ./HANDOFF.md
+   cp syndicate-protocol-kit/SSOT.template.md     ./SSOT.md
+   cp syndicate-protocol-kit/AGENTS.template.md   ./AGENTS.md
+   cp syndicate-protocol-kit/TASK.template.md     ./TASK.md
+   cp syndicate-protocol-kit/HANDOFF.template.md  ./HANDOFF.md
    ```
 
 2. **Copy the verification script and config**:
    ```bash
    mkdir -p scripts
-   cp docs/syndicate-protocol-kit/scripts/verify-ssot.mjs   ./scripts/verify-ssot.mjs
-   cp docs/syndicate-protocol-kit/ssot.config.example.json  ./ssot.config.json
+   cp syndicate-protocol-kit/scripts/verify-ssot.mjs   ./scripts/verify-ssot.mjs
+   cp syndicate-protocol-kit/ssot.config.example.json  ./ssot.config.json
    ```
 
 3. **Fill in every `[PLACEHOLDER]`** in the four copied documents:
@@ -74,7 +74,7 @@ Your project's own `README.md` (public overview/quick start) is not templated he
    node scripts/verify-ssot.mjs
    ```
 
-7. **Adopt the onboarding sequence** from `docs/SYNDICATE_PROTOCOL.md` §6 as the first thing every contributor — human or AI — does at the start of a session on this project. Consider linking to it (or a copy of it) from your own `README.md`.
+7. **Adopt the onboarding sequence** from [`AGENTS.md`](../AGENTS.md) and [`README.md`](../README.md) as the first thing every contributor — human or AI — does at the start of a session on this project. Consider linking to it (or a copy of it) from your own `README.md`.
 
 ## Customizing beyond the template
 

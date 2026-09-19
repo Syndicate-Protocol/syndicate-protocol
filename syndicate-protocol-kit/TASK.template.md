@@ -29,7 +29,7 @@
 ---
 
 <!--
-  Recommended pattern (see docs/SYNDICATE_PROTOCOL.md §7 "The Hardening Gate"):
+  Recommended pattern (see README.md § "The Adversarial Hardening Gate Pattern"):
   after a batch of milestones that build real functionality, insert a milestone
   like the one below whose only job is an adversarial review of everything marked
   [x] so far — and that BLOCKS the next milestone until it closes. Delete this

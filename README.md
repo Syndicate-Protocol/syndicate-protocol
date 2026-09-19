@@ -4,10 +4,20 @@
 
 # The Syndicate Protocol
 
+[![Release: Alpha](https://img.shields.io/badge/Release-v0.2.0--alpha.1_(Alpha)-orange.svg)](https://github.com/Syndicate-Protocol/syndicate-protocol/releases)
 [![License: Syndicate Community](https://img.shields.io/badge/License-Syndicate_Community_(Anti--SaaS)-blueviolet.svg)](LICENSE)
 [![Status: Active](https://img.shields.io/badge/Status-Active-success.svg)](https://github.com/Syndicate-Protocol/syndicate-protocol)
 [![Methodology: SSOT](https://img.shields.io/badge/Methodology-Syndicate_Protocol-purple.svg)](./README.md)
 [![CLI: syn](https://img.shields.io/badge/CLI-syn-cyan.svg)](https://github.com/Syndicate-Protocol/syndicate-protocol)
+
+> [!IMPORTANT]
+> **Public Alpha Release (`v0.2.0-alpha.1`)**:
+> Syndicate Protocol is currently in its initial **Public Alpha** phase. All core Single Source of Truth (SSOT) protocols, living document governance invariants, multi-agent adapters, and CLI commands (`syn verify`, `syn harden`, `syn doctor`, `syn web`) are fully operational, tested, and enforced under strict zero-stub invariants.
+>
+> As an Alpha release:
+> - Feature enhancements and API surfaces may evolve before v1.0.0.
+> - We welcome developer testing, bug reports, and community contributions.
+> - Remote attestation telemetry is strictly disabled in Alpha builds.
 
 > **A portable Single Source of Truth (SSOT) methodology and governance operating system for multi-agent, multi-contributor software engineering.**
 
@@ -208,23 +218,27 @@ You can adopt the Syndicate Protocol in any codebase in under 60 seconds:
 ├── TASK.md                          # Authoritative live task & milestone tracker
 ├── HANDOFF.md                       # Active operational state pointer between sessions
 ├── AGENTS.md                        # Contributor & agent operating standards & guidelines
+├── LICENSE                          # Syndicate Community Source License (100% Free & Anti-SaaS)
+├── CONTRIBUTING.md                   # Contributor standards & Developer Certificate of Origin (DCO)
 ├── ssot.config.json                 # SSOT validator configuration
-├── cmd/syn/                         # High-speed native Go CLI entrypoint
-├── internal/                        # CLI engines (validator, auditor, lease, innovation, web)
-├── web/                             # React 19 cybernetic embedded web dashboard
 ├── scripts/
 │   ├── verify-ssot.mjs              # Anti-drift integrity check script
 │   ├── install.ps1                  # Windows global installer
 │   └── install.sh                   # macOS & Linux global installer
 ├── syndicate-protocol-kit/          # Ready-to-copy adoption kit for other projects
 │   ├── README.md
+│   ├── ssot.config.example.json
 │   └── *.template.md
 └── docs/
-    ├── README.md                    # Central documentation index
-    ├── COMMANDS.md                  # Complete CLI command & testing manual
-    ├── INNOVATION.md                # Decoupled living innovation registry
-    └── SYNDICATE_ENHANCEMENT_BLUEPRINT.md # Master architectural roadmap
+    ├── README.md                    # Public user documentation hub & navigation map
+    ├── getting-started/             # Quickstart, installation, and project adoption guides
+    ├── cli/                         # Detailed syn CLI command reference
+    ├── guides/                      # Multi-agent harnesses & cybernetic web dashboard guides
+    └── images/                      # Official brand assets & logos
 ```
+
+> [!NOTE]
+> **Standalone Binary Distribution**: The high-speed native Go CLI engine (`syn`) is maintained in our private development monorepo and distributed free of charge as signed standalone binaries via [GitHub Releases](https://github.com/Syndicate-Protocol/syndicate-protocol/releases).
 
 ---
 

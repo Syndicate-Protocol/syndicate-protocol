@@ -1,6 +1,6 @@
 <!--
   TEMPLATE — copy to <repo-root>/SSOT.md and fill in every [PLACEHOLDER].
-  See docs/SYNDICATE_PROTOCOL.md for the full rationale behind every rule below.
+  See README.md and SSOT.md for the full rationale behind every rule below.
 -->
 
 # 🎯 SSOT.md — Single Source of Truth & Anti-Drift Architecture

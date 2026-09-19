@@ -44,7 +44,7 @@ flowchart TD
 
 | Command | Primary Flags | JSON Support | Exit Code 0 | Exit Code 1 |
 |---|---|---|---|---|
-| [`syn doctor`](#syn-doctor) | *(None)* | No | 100% compliant | Issues or warnings detected |
+| [`syn doctor`](#syn-doctor) | `--fix` | No | 100% compliant | Issues or warnings detected |
 | [`syn adopt`](#syn-adopt) | *(Interactive)* | No | Created successfully | Generation error |
 | [`syn verify`](#syn-verify) | `--deep`, `--templates`, `--json` | Yes | Zero drift | Drift / missing file detected |
 | [`syn harden`](#syn-harden) | `--json` | Yes | Zero stubs/mocks found | Fake completion detected |
@@ -55,6 +55,10 @@ flowchart TD
 | [`syn adapt`](#syn-adapt) | `--agent <name>` | No | Configs generated | Unknown agent specified |
 | [`syn worktree`](#syn-worktree) | `create`, `list`, `remove` | Yes (`list --json`) | Success | Git worktree error |
 | [`syn update`](#syn-update) | *(None)* | No | Updated in PATH | Compilation/copy failure |
+| [`syn version`](#syn-version) | `-v`, `--version` | No | Version displayed | Flag error |
+| [`syn scan`](#syn-scan) | `--fail-on <level>` | Yes (`--json`) | Clean / safe | Threats detected |
+| [`syn bom`](#syn-bom) | `--output <file>` | Yes (`--json`) | A-BOM generated | Write failure |
+| [`syn hook`](#syn-hook) | `install`, `remove` | No | Hook configured | Git error |
 
 ---
 
@@ -72,7 +76,11 @@ Performs a full diagnostic audit of your local repository configuration:
 - Audits AI skills and agent rule files for hygiene.
 
 ```bash
+# Run diagnostics
 syn doctor
+
+# Run diagnostics and automatically repair remediable issues (e.g. package linter hygiene)
+syn doctor --fix
 ```
 
 ---
@@ -206,3 +214,64 @@ Compiles the current workspace binary and updates the globally installed binary 
 ```bash
 syn update
 ```
+
+---
+
+### `syn version`
+
+Displays the active CLI version, release channel, and build provenance:
+
+```bash
+# Standard version provenance output
+syn version
+
+# Quick shorthand flags
+syn -v
+syn --version
+```
+
+---
+
+### `syn scan`
+
+Performs an automated security audit of AI agent skill files, markdown prompts, and execution scripts for prompt injections, credential harvesting, dangerous shell executions, and exfiltration attempts.
+
+```bash
+# Scan local agent skills and instruction files
+syn scan
+
+# Return structured JSON for CI security gates
+syn scan --json
+
+# Fail pipeline if threats meet or exceed severity threshold
+syn scan --fail-on HIGH
+```
+
+---
+
+### `syn bom`
+
+Generates an authoritative CycloneDX Agent Software Bill of Materials (A-BOM) capturing runtime tools, agents, dependencies, and SHA256 integrity hashes.
+
+```bash
+# Generate JSON A-BOM to stdout
+syn bom --json
+
+# Save A-BOM to a specific artifact file
+syn bom --json --output dist/syndicate-abom.json
+```
+
+---
+
+### `syn hook`
+
+Installs or manages automated Git hooks enforcing SSOT verification, Rule 6 hardening, and repository health diagnostics on `git commit` and `git push`.
+
+```bash
+# Install automated pre-commit and pre-push hooks
+syn hook install
+
+# Remove automated git hooks
+syn hook remove
+```
+
