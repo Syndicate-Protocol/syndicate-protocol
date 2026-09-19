@@ -108,3 +108,15 @@ When a new version is released, you can update directly via the CLI:
 ```bash
 syn update
 ```
+
+---
+
+## 🛑 Zero-Fee Guarantee: Never Pay for Syndicate Protocol
+
+Syndicate Protocol is 100% free software. There will **NEVER** be a fee, charge, paid tier, or subscription associated with Syndicate Protocol, directly or indirectly.
+
+> [!CAUTION]
+> If any vendor or service has charged you money or requested a subscription for Syndicate Protocol, demand an immediate refund and report the unauthorized violation to:
+>
+> - **Email**: `splv@syntaxsyndicate.com`
+> - **Subject**: `Syndicate Protocol License Violation`

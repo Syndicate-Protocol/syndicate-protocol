@@ -47,7 +47,7 @@ flowchart TD
 ## Why Syndicate Protocol?
 
 | Capability | Standard AI Pair Programming | With Syndicate Protocol |
-|---|---|---|
+| --- | --- | --- |
 | **Context Retention** | Lost between chat sessions or prompt limits | Persistent, unbroken continuity across sessions |
 | **Task Tracking** | Hallucinated progress, duplicate trackers | Single Source of Truth (`TASK.md`); shadow trackers blocked |
 | **Code Staleness** | Documentation drifts within days of code changes | AST signature analysis flags mismatched code exports |
@@ -105,6 +105,21 @@ sequenceDiagram
 
 ---
 
-## Community & Open Access
+## Community, Open Access & 100% Zero-Fee Guarantee
 
 Syndicate Protocol's templates, living documents, specifications, and documentation are 100% open and free under the [Syndicate Community Source License](../LICENSE). Pre-compiled standalone binaries are distributed free of charge for all supported operating systems.
+
+### 🛑 Zero-Fee Guarantee & Consumer Protection Notice
+
+There will **NEVER** be a fee, charge, paid tier, or subscription associated with Syndicate Protocol — whether directly or indirectly. The software and methodology are perpetually free.
+
+> [!CAUTION]
+> **Have you been charged or asked to pay for Syndicate Protocol?**
+> If any company, vendor, or third party has charged you money for Syndicate Protocol, sold you access, or bundled it into a paid subscription or service, you have been subjected to an unauthorized violation of the Syndicate Community Source License.
+>
+> 1. **Request an immediate refund**: Demand a full refund from the unauthorized seller.
+> 2. **Report the violation**: Please report the incident directly to our team:
+>    - **Email**: `splv@syntaxsyndicate.com`
+>    - **Subject**: `Syndicate Protocol License Violation`
+>    *(Please include transaction receipts, vendor names, or URLs. An online reporting form will also be available on our website).*
+

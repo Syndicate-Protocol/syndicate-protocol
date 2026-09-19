@@ -147,13 +147,13 @@ Install the standalone native Go `syn` CLI globally on any operating system with
 ### Windows (PowerShell)
 
 ```powershell
-irm https://raw.githubusercontent.com/syntax-syndicate/Syndicate_Protocol/master/scripts/install.ps1 | iex
+irm https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/main/scripts/install.ps1 | iex
 ```
 
 ### macOS & Linux (Bash)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/syntax-syndicate/Syndicate_Protocol/master/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Syndicate-Protocol/syndicate-protocol/main/scripts/install.sh | bash
 ```
 
 ### CLI Quickstart
@@ -238,7 +238,7 @@ We welcome contributions from human software engineers and autonomous AI coding 
 
 ---
 
-## ⚖️ License & Ethical Non-Commercial Covenant
+## ⚖️ License, Ethical Non-Commercial Covenant & Zero-Fee Guarantee
 
 Syndicate Protocol is governed by the **Syndicate Community Source License (Anti-SaaS & Anti-Commercialization)**. See [`LICENSE`](./LICENSE) for full legal text.
 
@@ -247,3 +247,18 @@ Syndicate Protocol is governed by the **Syndicate Community Source License (Anti
 - **Zero Direct or Indirect Fees**: You may not charge any party for the use of this software.
 - **Anti-Bundling Restriction**: The software may not be bundled, embedded, or offered "for free" within any commercial, paid, or subscription-based product or service.
 - **Attribution Preservation**: Official ASCII banners, logos, and copyright notices cannot be stripped or white-labeled.
+
+### 🛑 Consumer Protection: Never a Fee, Charge, or Subscription
+
+There will **NEVER** be a fee, charge, paid tier, or subscription associated with Syndicate Protocol — directly or indirectly. The software and methodology are perpetually free.
+
+> [!CAUTION]
+> **Have you been charged for Syndicate Protocol?**
+> If any company, vendor, or third party has charged you money for Syndicate Protocol, sold you access, or bundled it into a paid subscription or service, you have been subjected to an unauthorized violation of the Syndicate Community Source License.
+>
+> 1. **Request an immediate refund**: Demand a full refund from the unauthorized seller.
+> 2. **Report the violation**: Please report the incident directly to our team:
+>    - **Email**: `splv@syntaxsyndicate.com`
+>    - **Subject**: `Syndicate Protocol License Violation`
+>    *(Please include transaction receipts, vendor names, or URLs. An online reporting form will also be available on our website).*
+
