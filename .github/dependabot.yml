@@ -1,17 +1,6 @@
 version: 2
 updates:
-  # Maintain Go module dependencies for CLI engine
-  - package-ecosystem: "gomod"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-    open-pull-requests-limit: 5
-    labels:
-      - "dependencies"
-      - "security"
-
-  # Maintain root Node.js dependencies & scripts
+  # Maintain root Node.js dependencies & verification scripts
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -20,18 +9,6 @@ updates:
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
-      - "security"
-
-  # Maintain React 19 cybernetic web dashboard dependencies
-  - package-ecosystem: "npm"
-    directory: "/web"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-    open-pull-requests-limit: 5
-    labels:
-      - "dependencies"
-      - "web"
       - "security"
 
   # Maintain GitHub Actions workflow actions
