@@ -52,7 +52,7 @@ flowchart TD
 | Command | Primary Flags | JSON Support | Exit Code 0 | Exit Code 1 |
 |---|---|---|---|---|
 | [`syn doctor`](#syn-doctor) | `--fix` | No | 100% compliant | Issues or warnings detected |
-| [`syn adopt`](#syn-adopt) | *(Interactive)* | No | Created successfully | Generation error |
+| [`syn adopt`](#syn-adopt) | `-c`, `-i`, `-n`, `-y` | No | Created successfully | Generation error |
 | [`syn rollback`](#syn-rollback) | `--clean` | No | Restored from backup | Backup not found |
 | [`syn verify`](#syn-verify) | `--deep`, `--templates`, `--json` | Yes | Zero drift | Drift / missing file detected |
 | [`syn harden`](#syn-harden) | `--json` | Yes | Zero stubs/mocks found | Fake completion detected |
@@ -95,10 +95,32 @@ syn doctor --fix
 
 ### `syn adopt`
 
-Launches the interactive project adoption wizard. Automatically detects project stack, creates living root documents, sets up `ssot.config.json`, and verifies setup.
+Zero-fatigue brownfield adoption engine. Scans existing codebases across Go, Node.js, Python, Rust, and polyglots, automatically detecting tech stacks, package managers, and test runners, and bootstraps Syndicate Protocol governance without overwriting existing code.
+
+Features universal zero-fatigue resolution: in-situ execution, fuzzy substring matching against nearby project folders, clipboard auto-detection, and interactive TUI repository discovery. Automatically detects displaced living documents (`docs/task.md` → `TASK.md`, `docs/AGENT_HANDOFF.md` → `HANDOFF.md`), disambiguates `pnpm-workspace.yaml` overrides from true monorepos, and mines high-severity constraints into `SSOT.md` Level 1.
+
+- **Syntax**: `syn adopt [target-directory-or-query] [flags]`
+- **Flags**:
+  - `-c, --clip`: Adopt repository directory path directly from the OS system clipboard.
+  - `-i, --interactive`: Interactively discover and select a project to adopt via Charm Huh TUI.
+  - `-n, --name <string>`: Custom project name for adopted codebase.
+  - `-y, --yes`: Non-interactive mode (auto-confirm adoption defaults).
 
 ```bash
+# Adopt current directory (zero arguments)
 syn adopt
+
+# Fuzzy match a nearby project folder (e.g. ../backend-service or ../../client/portal)
+syn adopt client-portal
+
+# Adopt repository path copied to OS clipboard
+syn adopt --clip
+
+# Interactively browse and pick candidate projects
+syn adopt -i
+
+# Non-interactive adoption with custom project name
+syn adopt my-app -n "MyAppService" -y
 ```
 
 ---
@@ -314,6 +336,6 @@ syn update
 syn update --channel alpha
 
 # Install a specific release tag
-syn update --tag v0.2.0-alpha.3
+syn update --tag v0.2.0-alpha.4
 ```
 

@@ -49,17 +49,28 @@ syn --version
 
 ## 2. Initialize in Any Project
 
-Navigate to any existing repository or a new directory and run:
+Run `syn adopt` directly inside your project, or target it effortlessly from anywhere:
 
 ```bash
+# Option A: In-situ adoption (run inside project directory)
 syn adopt
+
+# Option B: Substring fuzzy match from anywhere (e.g. D:/projects/client-app)
+syn adopt client-app
+
+# Option C: Adopt path copied to clipboard
+syn adopt --clip
+
+# Option D: Interactive TUI picker
+syn adopt -i
 ```
 
-The interactive wizard will guide you through:
+The interactive engine automatically:
 
-1. Detecting your project's technology stack (TypeScript, Go, Python, Rust, etc.).
-2. Generating the **5 Living Root Documents** tailored to your project.
-3. Setting up your automated verification script (`ssot.config.json`).
+1. Detects your project's technology stack (TypeScript, Go, Python, Rust, etc.).
+2. Protects existing brownfield assets by promoting displaced living documents (`docs/task.md` → `TASK.md`, `docs/AGENT_HANDOFF.md` → `HANDOFF.md`) and mining high-severity invariants into `SSOT.md`.
+3. Bootstraps the **5 Living Root Documents** tailored to your project.
+4. Configures non-destructive automated verification scripts (`ssot.config.json`).
 
 ---
 

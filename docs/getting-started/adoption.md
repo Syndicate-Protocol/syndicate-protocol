@@ -25,23 +25,92 @@ flowchart TD
 
 ## Method 1: Automated Adoption via CLI (Recommended)
 
-Navigate to your project's root folder and run:
+The `syn adopt` engine is designed to eliminate friction and finger fatigue when adopting new or brownfield projects. You never need to type out long, tedious directory paths.
 
+### 🎯 Universal Zero-Fatigue Target Resolution
+
+The CLI supports four ergonomic ways to target a repository:
+
+```mermaid
+flowchart TD
+    Mode1["1. In-Situ Mode\n'syn adopt'\n(Run directly inside target project)"]
+    Mode2["2. Substring / Fuzzy Match\n'syn adopt my-app'\n(Scans nearby folders dynamically)"]
+    Mode3["3. System Clipboard\n'syn adopt --clip'\n(Reads path from OS clipboard)"]
+    Mode4["4. Interactive TUI\n'syn adopt -i'\n(Charm Huh interactive picker)"]
+
+    Mode1 --> Engine["Intelligent Adoption Engine"]
+    Mode2 --> Engine
+    Mode3 --> Engine
+    Mode4 --> Engine
+    Engine --> Brownfield["Brownfield Scanner & Auto-Remediation"]
+    Engine --> Generate["Zero-Loss Living Doc Generation"]
+```
+
+#### 1. In-Situ Execution (Zero Arguments)
+Navigate to your project's root folder and simply run:
 ```bash
 syn adopt
 ```
+It automatically resolves the target as the current working directory (`.`).
 
-The interactive wizard will:
+#### 2. Substring & Fuzzy Matching (`syn adopt <query>`)
+Run from any parent, sibling, or workspace directory with a partial query:
+```bash
+# Finds and targets D:/projects/.../vagari-v1
+syn adopt vagari
 
-1. Scan your project files to automatically detect language, package managers, and tools.
-2. Ask for your project's canonical name, description, and primary maintainer.
-3. Automatically generate the **5 Living Root Documents**:
-   - `SSOT.md`: Single Source of Truth authority rules and architecture invariants.
-   - `README.md`: Public orientation and documentation map.
-   - `TASK.md`: Living task and milestone progress tracker.
-   - `HANDOFF.md`: Operational hand-off state between sessions.
-   - `AGENTS.md`: Contributor and AI coding agent guidelines.
-4. Set up `ssot.config.json` and a lightweight Node.js/Go verification gate.
+# Finds and targets ../client-portal
+syn adopt portal
+
+# Finds and targets ../../services/auth-api
+syn adopt auth
+```
+The resolver dynamically traverses parent and sibling directories, scoring folders that contain canonical project signatures (`.git`, `package.json`, `go.mod`, `Cargo.toml`, `pyproject.toml`, `pom.xml`, etc.) and selecting the best match.
+
+#### 3. System Clipboard Auto-Detection (`syn adopt --clip` / `-c`)
+Copy a directory path to your system clipboard (e.g., via Windows File Explorer `Ctrl+Shift+C` "Copy as path" or macOS `Cmd+Opt+C`) and run:
+```bash
+syn adopt --clip
+# or
+syn adopt -c
+```
+The CLI automatically retrieves, trims enclosing quotes, verifies the path on disk, and executes adoption.
+
+#### 4. Interactive TUI Project Picker (`syn adopt -i` / `--interactive`)
+Discover and pick from candidate projects interactively:
+```bash
+syn adopt -i
+```
+Launches a responsive Charm `huh` terminal menu listing all discovered candidate repositories in adjacent directory trees.
+
+---
+
+### 🛡️ Brownfield Auto-Remediation & Zero-Loss Promotion
+
+When adopting a project that is already deep in active development, `syn adopt` automatically protects your existing assets:
+
+1. **Displaced Living Document Promotion (Zero-Loss Migration)**:
+   - If your project already maintains nested task trackers (e.g. `docs/task.md` or `docs/tasks.md`), the engine automatically promotes it to root [`TASK.md`](#) rather than overwriting it with a blank template. All your milestone history, task checkboxes, and phase breakdowns are preserved 100%.
+   - If an existing hand-off state exists (e.g. `docs/AGENT_HANDOFF.md` or `docs/handoff.md`), it is promoted to root [`HANDOFF.md`](#).
+2. **`pnpm-workspace.yaml` Disambiguation**:
+   - Modern single-application repositories often declare `pnpm-workspace.yaml` solely for package `overrides:` or `allowBuilds:`. The engine inspects whether active multi-package directories exist (`packages:` directive). If not, it correctly classifies the repository as a single application (`isMonorepo: false`), avoiding false monorepo assumptions.
+3. **High-Severity Invariant Mining**:
+   - Scans existing guidelines, architectural blueprints, and handoff notes for critical statutory, operational, or database hazards (`CRITICAL`, `NEVER RUN`, `DROP TABLE`, `STATUTORY`, `CAL. CIV. CODE`) and codifies them directly into [`SSOT.md`](#) Level 1 Constitutional Invariants.
+4. **Non-Destructive Package Script Chaining**:
+   - If your `package.json` already defines a `verify` script (e.g. `npm test` or `turbo run lint`), `syn adopt` chains them non-destructively (`"verify": "pnpm run verify:ssot && <original_verify>"`).
+5. **Specification Relocation**:
+   - Displaced specification files residing at root are moved into the centralized `docs/` hub to enforce the 5-living-root-files invariant.
+
+---
+
+### Adoption Flags & Options
+
+| Flag | Shorthand | Type | Description |
+|---|---|---|---|
+| `--clip` | `-c` | `bool` | Adopt repository path directly from the OS system clipboard |
+| `--interactive` | `-i` | `bool` | Interactively browse and select candidate projects via Charm Huh TUI |
+| `--name` | `-n` | `string` | Specify custom canonical project name |
+| `--yes` | `-y` | `bool` | Non-interactive mode (auto-confirm all adoption defaults) |
 
 ---
 

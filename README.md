@@ -183,13 +183,23 @@ syn update
 
 ## Adopting in Your Own Project
 
-You can adopt the Syndicate Protocol in any codebase in under 60 seconds:
+You can adopt Syndicate Protocol in any codebase — new or existing — in under 60 seconds:
 
-1. **Automated Adoption (CLI)**:
+1. **Automated Zero-Fatigue Adoption (CLI)**:
+   The `syn adopt` engine automatically detects your tech stack, promotes displaced task trackers (`docs/task.md` → `TASK.md`), and mines high-severity invariants into `SSOT.md` without overwriting source code:
 
    ```bash
-   # Initialize in an existing repository
+   # In-situ: Run directly inside your project root
    syn adopt
+
+   # Fuzzy match: Target any nearby project by partial name (no typing long paths)
+   syn adopt my-project
+
+   # Clipboard: Target directory path copied to OS clipboard
+   syn adopt --clip
+
+   # Interactive TUI: Browse and select nearby projects
+   syn adopt -i
    ```
 
 2. **Template Kit (Manual)**:

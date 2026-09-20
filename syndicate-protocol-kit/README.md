@@ -22,7 +22,11 @@ syndicate-protocol-kit/
 
 Your project's own `README.md` (public overview/quick start) is not templated here — you already have one, and it's the fifth living root file per the methodology.
 
-## Install steps
+> [!TIP]
+> **Prefer Automated Adoption?**
+> If you have the `syn` CLI installed, run `syn adopt` (or `syn adopt <folder-name>`, `syn adopt --clip`, `syn adopt -i`). The CLI automatically scans your project, promotes displaced task trackers (`docs/task.md` → `TASK.md`), mines constitutional invariants into `SSOT.md`, and configures verification scripts non-destructively in under 30 seconds.
+
+## Manual Install Steps
 
 1. **Copy the four living documents** to your repository root, dropping `.template` from the filename:
    ```bash
