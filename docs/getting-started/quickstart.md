@@ -8,6 +8,8 @@ description: Get up and running with Syndicate Protocol in your terminal in unde
 
 Get up and running with Syndicate Protocol in your terminal in under 2 minutes.
 
+> [!TIP]
+> **Why Teams Adopt Syndicate Protocol**: Beyond guaranteed zero architectural drift, adopting Syndicate Protocol slashes developer AI API bills by **30% to 65%** by eliminating blind context thrashing and expensive stub debugging loops. Read the [**LLM Token Economics & Cost ROI Guide**](./token-economics.md).
 
 ---
 

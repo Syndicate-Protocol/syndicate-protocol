@@ -202,7 +202,7 @@ pie title Typical Token Savings in a 20-Turn AI Coding Session
 4. **$0.00 CLI Verification**:
    The `syn` CLI engine (`syn verify`, `syn harden`, `syn doctor`) runs locally in native Go in **sub-10ms** on the developer's CPU with zero LLM API calls.
 
-For full token benchmarks and pricing matrices, read the complete [**LLM Token Economics & Cost Efficiency Guide**](../guides/token-and-cost-efficiency.md).
+For full token benchmarks and pricing matrices, read the complete [**LLM Token Economics & Cost ROI Guide**](./token-economics.md).
 
 ---
 

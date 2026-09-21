@@ -72,7 +72,7 @@ flowchart TD
 | **Tooling Footprint** | Heavy cloud lock-in or proprietary subscriptions | Zero cloud dependencies; standalone native Go binary |
 
 > [!TIP]
-> **Proven LLM Cost Reduction**: In real-world multi-turn agent sessions, Syndicate Protocol reduces developer LLM API spend by **30% to 65%** by eliminating blind directory searching, stub debugging loops, and out-of-scope rabbit holes. See the [**LLM Token Economics & Cost Efficiency Guide**](./guides/token-and-cost-efficiency.md).
+> **Proven LLM Cost Reduction**: In real-world multi-turn agent sessions, Syndicate Protocol reduces developer LLM API spend by **30% to 65%** by eliminating blind directory searching, stub debugging loops, and out-of-scope rabbit holes. See the [**LLM Token Economics & Cost ROI Guide**](./getting-started/token-economics.md).
 
 ---
 
@@ -81,13 +81,13 @@ flowchart TD
 ### 🚀 Getting Started
 
 - [**Quickstart Guide**](./getting-started/quickstart.md) — Get up and running in under 2 minutes.
+- [**LLM Token Economics & Cost ROI**](./getting-started/token-economics.md) — Why adopting Syndicate Protocol saves 30% to 65% on developer AI bills.
 - [**Installation Guide**](./getting-started/installation.md) — Install the `syn` CLI globally on Windows, macOS, or Linux.
 - [**Project Adoption**](./getting-started/adoption.md) — Adopt the protocol in an existing codebase or initialize a new project.
 
 ### 📖 Reference & Manuals
 
 - [**CLI Command Reference**](./cli/commands.md) — Complete user guide for all `syn` CLI commands and options.
-- [**LLM Token Economics & Cost ROI**](./guides/token-and-cost-efficiency.md) — How the protocol saves 30% to 65% on developer AI inference bills.
 - [**Multi-Agent Integration**](./guides/multi-agent.md) — Connect Claude Code, Cursor, Antigravity, and GitHub Copilot.
 - [**Cybernetic Web Dashboard**](./guides/web-dashboard.md) — Launch and navigate the embedded React 19 visual dashboard.
 - [**Contributing Guide**](../CONTRIBUTING.md) — How to contribute to templates, specifications, and documentation.

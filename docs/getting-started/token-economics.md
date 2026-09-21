@@ -1,15 +1,12 @@
 ---
 layout: default
-title: LLM Token Economics & Cost Efficiency
-description: How Syndicate Protocol reduces developer LLM inference costs by 30% to 65% through context stabilization, prompt caching, and zero-mock enforcement
+title: LLM Token Economics & Cost ROI
+description: Why adopting Syndicate Protocol reduces developer AI inference costs by 30% to 65% through context stabilization, prompt caching, and zero-mock enforcement
 ---
 
-# 💰 LLM Token Economics & Cost Efficiency
+# 💰 LLM Token Economics & Cost ROI
 
-> [!TIP]
-> **Promoted to Getting Started**: This guide is a core pillar of the adoption curriculum. You can also view it directly in [**Getting Started: LLM Token Economics & Cost ROI**](../getting-started/token-economics.md).
-
-A primary concern when introducing any AI governance protocol or agent framework is:  
+A primary question engineering leaders and developers ask before adopting Syndicate Protocol is:  
 **Will this bloat the context window and drive up developer LLM API bills?**
 
 The empirical answer is **No — in real-world multi-turn agent sessions, Syndicate Protocol delivers a significant *net reduction* in total token spend (typically 30% to 65% cost savings per session).**
