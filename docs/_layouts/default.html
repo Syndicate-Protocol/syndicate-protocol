@@ -214,22 +214,29 @@
         mermaid.run();
       }
 
-      // 4. Transform GitHub blockquote alerts [!NOTE], [!IMPORTANT], etc.
+      // 4. Transform GitHub blockquote alerts [!NOTE], [!TIP], etc.
       document.querySelectorAll('.markdown-body blockquote').forEach(bq => {
-        const text = bq.innerHTML;
-        const alerts = [
-          { tag: '\\[\\!NOTE\\]', class: 'note', title: 'Note' },
-          { tag: '\\[\\!TIP\\]', class: 'tip', title: 'Tip' },
-          { tag: '\\[\\!IMPORTANT\\]', class: 'important', title: 'Important' },
-          { tag: '\\[\\!WARNING\\]', class: 'warning', title: 'Warning' },
-          { tag: '\\[\\!CAUTION\\]', class: 'caution', title: 'Caution' }
+        const rawHTML = bq.innerHTML;
+        const alertTypes = [
+          { type: 'TIP', class: 'tip', title: 'Tip', icon: '💡' },
+          { type: 'NOTE', class: 'note', title: 'Note', icon: 'ℹ️' },
+          { type: 'IMPORTANT', class: 'important', title: 'Important', icon: '⚡' },
+          { type: 'WARNING', class: 'warning', title: 'Warning', icon: '⚠️' },
+          { type: 'CAUTION', class: 'caution', title: 'Caution', icon: '🛑' }
         ];
 
-        for (const alert of alerts) {
-          const regex = new RegExp(`^<p>\\s*${alert.tag}\\s*(?:<br>)?\\s*`, 'i');
-          if (regex.test(text)) {
+        for (const alert of alertTypes) {
+          const regex = new RegExp(`^\\s*(<p>)?\\s*\\[\\!${alert.type}\\]\\s*(?:<br\\s*\\/?>)?\\s*`, 'i');
+          if (regex.test(rawHTML)) {
             bq.className = `alert-callout ${alert.class}`;
-            bq.innerHTML = text.replace(regex, `<p><strong>${alert.title}:</strong> `);
+            const cleanContent = rawHTML.replace(regex, '$1');
+            bq.innerHTML = `
+              <div class="callout-header">
+                <span class="callout-icon">${alert.icon}</span>
+                <span class="callout-title">${alert.title}</span>
+              </div>
+              <div class="callout-content">${cleanContent}</div>
+            `;
             break;
           }
         }
