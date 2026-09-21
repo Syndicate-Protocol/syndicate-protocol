@@ -1,0 +1,41 @@
+name: "✨ Feature Proposal"
+description: "Propose a new feature or enhancement for [PROJECT_NAME]"
+title: "feat: [Short summary of proposal]"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing an enhancement to **[PROJECT_NAME]**!
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem or Need"
+      description: "What problem does this feature solve?"
+      placeholder: "Currently, ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: "Proposed Solution & Design"
+      description: "Detailed description of the proposed feature or design."
+      placeholder: "We propose..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives Considered"
+      description: "Any alternative approaches you considered."
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "Checklist"
+      options:
+        - label: "I have checked that this feature does not violate the project's constitutional invariants."
+          required: true

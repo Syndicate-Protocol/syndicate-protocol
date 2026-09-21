@@ -16,6 +16,7 @@ Whether you are a human software engineer or an autonomous AI coding agent, this
 6. [Polyglot Coding Standards](#6-polyglot-coding-standards)
 7. [Automated Verification & Quality Gates](#7-automated-verification--quality-gates)
 8. [Submitting Pull Requests & PR Checklist](#8-submitting-pull-requests--pr-checklist)
+9. [Code of Conduct & Community Standards](#9-code-of-conduct--community-standards)
 
 ---
 
@@ -250,6 +251,7 @@ Before submitting your Pull Request, complete this checklist:
 
 - [ ] All commits are signed off with DCO (`git commit -s`).
 - [ ] Code strictly complies with the **Syndicate Community Source License (Anti-SaaS)**.
+- [ ] You have reviewed and agreed to uphold the [**Code of Conduct**](./CODE_OF_CONDUCT.md).
 - [ ] No API keys, credentials, or `.reference__items/` artifacts are committed.
 - [ ] `pnpm run verify:ssot` passes with zero errors.
 - [ ] `syn verify --deep` passes with zero drift.
@@ -257,6 +259,14 @@ Before submitting your Pull Request, complete this checklist:
 - [ ] `go test ./...` passes all unit tests.
 - [ ] `TASK.md` reflects true completion status (no unchecked stubs).
 - [ ] `HANDOFF.md` is updated with your latest work and clear next steps.
+
+---
+
+## 9. Code of Conduct & Community Standards
+
+We are committed to providing a welcoming, inclusive, and harassment-free environment for all human contributors, maintainers, and operators of autonomous AI software engineering agents.
+
+Please read our full [**Contributor Covenant Code of Conduct (`CODE_OF_CONDUCT.md`)**](./CODE_OF_CONDUCT.md). Instances of abusive or unacceptable behavior can be reported to **`conduct@syntaxsyndicate.com`**.
 
 Thank you for helping keep the **Syndicate Protocol** authoritative, robust, and zero-drift!
 

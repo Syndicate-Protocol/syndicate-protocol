@@ -1,0 +1,67 @@
+name: "✨ Feature / Innovation Proposal"
+description: "Propose a new feature, CLI command, AST analyzer, or architectural enhancement"
+title: "feat: [Short summary of proposal]"
+labels: ["enhancement", "innovation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing an enhancement to **Syndicate Protocol**!
+        Syndicate Protocol uses a decoupled Innovation Registry architecture ([`docs/INNOVATION.md`](https://github.com/Syndicate-Protocol/syndicate-protocol/blob/main/docs/INNOVATION.md)) to evaluate, score, and prioritize community proposals.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Proposal Category"
+      description: "Which area of the protocol does this enhancement target?"
+      options:
+        - "CLI Commands & Ergonomics (syn ...)"
+        - "AST & Static Code Intelligence (Go/TS/Python/Rust/C#)"
+        - "Multi-Agent Adapters & Harnesses (Claude, Cursor, Copilot, Codex, Antigravity)"
+        - "Swarm Concurrency & Leases (ZeroID, UHP, leases.json)"
+        - "Cybernetic Web Dashboard & TUI (React 19, Lip Gloss, Glamour)"
+        - "Brownfield Ingestion & Project Adoption"
+        - "Security Profiling & A-BOM Verification"
+        - "Protocol Living Document Standard & Verification"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem or Need"
+      description: "What problem does this feature solve? Is there a friction point in current workflows?"
+      placeholder: "Currently, when working with multi-agent swarms, ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: "Proposed Solution & Design"
+      description: "Detailed description of the proposed feature, CLI syntax, data models, or behavioral changes."
+      placeholder: |
+        We propose adding `syn ...` which will:
+        1. Parse ...
+        2. Validate ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives Considered"
+      description: "Any alternative approaches, libraries, or workarounds you considered."
+      placeholder: "We considered using ..., but it had limitations because..."
+
+  - type: checkboxes
+    id: compliance
+    attributes:
+      label: "Architectural & Licensing Alignment"
+      options:
+        - label: "This proposal complies with Constitutional Invariant 1 (Zero Vendor / Cloud Lock-In & Runs Locally)."
+          required: true
+        - label: "This proposal complies with Constitutional Invariant 5 (Anti-Commercialism & Anti-SaaS Covenant)."
+          required: true
+        - label: "I have read the [Contributing Guide](https://github.com/Syndicate-Protocol/syndicate-protocol/blob/main/CONTRIBUTING.md) and [Code of Conduct](https://github.com/Syndicate-Protocol/syndicate-protocol/blob/main/CODE_OF_CONDUCT.md)."
+          required: true

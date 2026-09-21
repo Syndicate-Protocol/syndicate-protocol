@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "🔒 Report a Security Vulnerability"
+    url: "https://github.com/Syndicate-Protocol/syndicate-protocol/security/advisories/new"
+    about: "Report security vulnerabilities privately and securely according to our Security Policy."
+  - name: "⚖️ Report a License Violation (Anti-SaaS / Commercial Exploitation)"
+    url: "https://github.com/Syndicate-Protocol/syndicate-protocol/blob/main/LICENSE"
+    about: "Report unauthorized SaaS hosting, direct/indirect fee charging, or white-labeling to splv@syntaxsyndicate.com."
+  - name: "💬 Community Q&A and Discussions"
+    url: "https://github.com/Syndicate-Protocol/syndicate-protocol/discussions"
+    about: "Ask questions, share multi-agent workflows, or discuss governance best practices with the community."
+  - name: "📖 Official Documentation Portal"
+    url: "https://syndicate-protocol.github.io/syndicate-protocol/"
+    about: "Read the complete documentation, quickstart, CLI reference, and guides."

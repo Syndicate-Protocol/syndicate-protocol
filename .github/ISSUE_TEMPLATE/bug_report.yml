@@ -1,0 +1,106 @@
+name: "🐛 Bug Report"
+description: "File a reproducible bug or unexpected behavior in Syndicate Protocol CLI or dashboard"
+title: "fix: [Short summary of the issue]"
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug in **Syndicate Protocol**!
+        Before submitting, please ensure you have checked the [Documentation](https://syndicate-protocol.github.io/syndicate-protocol/) and run `syn doctor` to inspect your local setup.
+
+  - type: input
+    id: version
+    attributes:
+      label: "Syndicate Protocol Version"
+      description: "Output of `syn --version` or `syn version`."
+      placeholder: "v0.2.0-alpha.3 (commit: abc1234)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: "Operating System & Environment"
+      description: "Which OS and shell are you running?"
+      options:
+        - "Windows 11 (PowerShell / Windows Terminal)"
+        - "Windows 10 (PowerShell / cmd)"
+        - "Linux (Ubuntu / Debian - Bash)"
+        - "Linux (Arch / Fedora - Zsh / Fish)"
+        - "macOS (Apple Silicon - Zsh)"
+        - "macOS (Intel - Zsh)"
+        - "Other (Specify in description)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: "Affected Subsystem / Component"
+      description: "Which part of Syndicate Protocol is experiencing the issue?"
+      options:
+        - "CLI Core (syn init, syn verify, syn harden, syn start, syn handoff)"
+        - "Brownfield Ingestion & Adoption (syn adopt, syn rollback)"
+        - "Binary Updater (syn update)"
+        - "Swarm Concurrency & Leases (syn lease)"
+        - "Security Profiler & BOM (syn scan, syn bom)"
+        - "Charm TUI / REPL (syn dash, syn shell)"
+        - "Cybernetic Web Dashboard (syn web / localhost:4242)"
+        - "Multi-Agent Adapters (Claude Code, Cursor, Antigravity, Copilot)"
+        - "Node.js SSOT Validator (scripts/verify-ssot.mjs)"
+        - "Distribution Kit / Installers (scripts/install.ps1, install.sh)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Describe the Bug"
+      description: "A clear and concise description of what the bug is."
+      placeholder: "When running `syn ...`, the command fails with error..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Steps to Reproduce"
+      description: "Exact steps to reproduce the behavior."
+      placeholder: |
+        1. Run 'syn adopt ...'
+        2. Inspect output...
+        3. See error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected Behavior"
+      description: "What you expected to happen."
+      placeholder: "The command should validate cleanly and report..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Command Output & Terminal Logs"
+      description: "Paste relevant output from `syn verify --deep`, `syn harden --strict`, or `syn doctor`."
+      render: shell
+      placeholder: |
+        $ syn doctor
+        ...
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "Pre-Submission Checklist"
+      options:
+        - label: "I have searched existing [Issues](https://github.com/Syndicate-Protocol/syndicate-protocol/issues) to ensure this is not a duplicate."
+          required: true
+        - label: "This is a functional or technical issue with Syndicate Protocol, not a request for commercial SaaS / hosting."
+          required: true
+        - label: "I understand that security vulnerabilities must be submitted privately via [Security Advisory](https://github.com/Syndicate-Protocol/syndicate-protocol/security/advisories) rather than public issues."
+          required: true
